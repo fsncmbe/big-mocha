@@ -3,7 +3,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Compile the main.cpp file",
+            "label": "Build Engine",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-o",
@@ -33,7 +33,7 @@
         },
         {
             "type": "shell",
-            "label": "Run main.exe",
+            "label": "Run Engine",
             "command": ".\\main.exe",
             "args": [
                 "${input:screenWidth}",
