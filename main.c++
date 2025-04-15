@@ -3,6 +3,15 @@
 #include <GLFW/glfw3.h>
 #include "include/glad/glad.h"
 
+void ProcessInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    {
+        glfwSetWindowShouldClose(window, true);
+    }
+}
+
+
 int main(int argc, const char *argv[])
 {
     glfwInit();
@@ -10,9 +19,11 @@ int main(int argc, const char *argv[])
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+    // Screen dimensions 
     int kwidth = 800;
     int kheight = 800;
 
+    // Custom screen dimensions
     if (argc > 1)
     {
         kwidth = atoi(argv[1]);

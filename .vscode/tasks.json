@@ -3,14 +3,14 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Build Engine",
+            "label": "Build Main",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-o",
                 "main.exe",
 
                 "main.c++",
-                "glad.c",
+                "src/glad.c",
 
                 "-lopengl32",
                 "-lglfw3"
@@ -33,7 +33,7 @@
         },
         {
             "type": "shell",
-            "label": "Run Engine",
+            "label": "Run Main",
             "command": ".\\main.exe",
             "args": [
                 "${input:screenWidth}",

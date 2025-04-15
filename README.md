@@ -1,3 +1,3 @@
-C++ OpenGl Engine
+C++ OpenGl Game Framework
 
-Build and Run Engine with tasks accessible via ctrl + shift + b.
+Build and Run Main with tasks accessible via ctrl + shift + b.
