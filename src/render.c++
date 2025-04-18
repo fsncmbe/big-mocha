@@ -4,7 +4,7 @@
 #include <map>
 
 #include <glad/glad.h>
-#include <glm/glm.hpp>
+#include "glm/glm.hpp"
 #include <GLFW/glfw3.h>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
