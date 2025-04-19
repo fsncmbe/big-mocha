@@ -1,7 +1,7 @@
 #include <iostream>
-#define GLFW_INCLUDE_NONE
-#include "include/GLFW/glfw3.h"
-#include "include/glad/glad.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 void ProcessInput(GLFWwindow *window)
 {
