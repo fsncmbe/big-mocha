@@ -15,10 +15,15 @@ $(BDIR)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) $(OBJS) -o $@  $(LIBS)
 
 $(BDIR)/main.o: ./src/main.cpp
+	mkdir -p $(BDIR)
 	$(CXX) -c ./src/main.cpp $(IDIR) -o $@
 
 $(BDIR)/glad.o: ./include/glad/glad.c
+	mkdir -p $(BDIR)
 	$(CXX) -c ./include/glad/glad.c $(IDIR) -o $@
+
+
+
 
 .PHONY: clean
 clean:
