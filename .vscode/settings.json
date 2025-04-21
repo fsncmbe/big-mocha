@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "map": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp"
     },
     "makefile.configureOnOpen": false
 }
