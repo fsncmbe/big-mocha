@@ -24,12 +24,11 @@ namespace graphics
         void use();
 
         // Set uniform variables 
-        void setBool();
-        void setInt();
-        void setFload();
+        void setBool(const char* name, bool value);
+        void setInt(const char* name, int value);
+        void setFload(const char* name, float value);
     private:
-        // Check for compilation error, maybe take out in another class
-        void checkCompileErrors();
+        
     };
 };
 };
