@@ -57,7 +57,8 @@
         "text_encoding": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "stdio.h": "c"
     },
     "makefile.configureOnOpen": false
 }

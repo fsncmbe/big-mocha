@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "window/window.hpp"
+#include "modules/window/window.hpp"
 
 int main(int argc, const char *argv[])
 {
     // Init window
-    mocha::window::initWindow(1080, 1920);
+    mocha::window::initWindow(1920, 1080);
 
     // Render loop
     while(mocha::window::keepGameLoop())

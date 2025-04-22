@@ -9,7 +9,7 @@
 namespace mocha{
 namespace window
 {
-    GLFWwindow* window;
+    inline GLFWwindow* window;
 
     void initWindow(int window_width, int window_height);
     bool keepGameLoop();

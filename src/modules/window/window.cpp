@@ -1,5 +1,7 @@
 #include "window.hpp"
 
+
+
 void mocha::window::initWindow(int window_width, int window_height)
 {
     glfwInit();

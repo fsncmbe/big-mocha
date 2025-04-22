@@ -7,5 +7,5 @@ mocha::graphics::Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned i
 
 void mocha::graphics::Mesh::setupMesh()
 {
-
+    
 }
