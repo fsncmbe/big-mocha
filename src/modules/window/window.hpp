@@ -11,7 +11,7 @@ namespace window
 {
     inline GLFWwindow* window;
 
-    void initWindow(int window_width, int window_height);
+    void init(int window_width, int window_height);
     bool keepGameLoop();
     void clearWindow();
     void swapBuffers();

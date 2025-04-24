@@ -1,6 +1,8 @@
 TARGET_EXEC = main.exe
+MIN_TARGET_EXEC = minmain.exe
 
 SDIR := src
+MDIR := $(SDIR)/modules
 BDIR := build
 IDIR := include
 
@@ -15,6 +17,16 @@ OBJS := $(patsubst %,build/%,$(OBJS))
 OBJS := $(patsubst %.cpp,%.o,$(OBJS))
 OBJS := $(patsubst %.c,%.o,$(OBJS))
 
+MIN_SRC := $(SDIR)/main.cpp 
+MIN_SRC += $(MDIR)/glad/glad.c
+MIN_SRC += $(MDIR)/graphics/shader.cpp $(MDIR)/graphics/stb.cpp $(MDIR)/graphics/graphics.cpp
+MIN_SRC += $(MDIR)/window/window.cpp
+
+MIN_OBJS := $(patsubst src/%,%,$(MIN_SRC))
+MIN_OBJS := $(patsubst %,build/%,$(MIN_OBJS))
+MIN_OBJS := $(patsubst %.cpp,%.o,$(MIN_OBJS))
+MIN_OBJS := $(patsubst %.c,%.o,$(MIN_OBJS))
+
 DIRS := $(sort $(dir $(OBJS)))
 
 CXX := g++
@@ -28,6 +40,11 @@ all: prep_dir $(BDIR)/$(TARGET_EXEC)
 $(BDIR)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) -o $@ $^ $(LIBS)
 
+min: prep_dir $(BDIR)/$(MIN_TARGET_EXEC)
+
+$(BDIR)/$(MIN_TARGET_EXEC): $(MIN_OBJS)
+	$(CXX) -o $@ $^ $(LIBS)
+
 # Get .cpp -> .o
 $(BDIR)/%.o: $(SDIR)/%.cpp
 	$(CXX) -I$(IDIR) -c $< -o $@
@@ -36,6 +53,7 @@ $(BDIR)/%.o: $(SDIR)/%.cpp
 $(BDIR)/%.o: $(SDIR)/%.c
 	$(CXX) -I$(IDIR) -c $< -o $@
 
+
 # Clean call
 .PHONY: clean
 clean:
@@ -43,8 +61,12 @@ clean:
 
 # Run call
 .PHONY: run
-run: $(BDIR)/$(TARGET_EXEC)
+run: prep_dir $(BDIR)/$(TARGET_EXEC)
 	$(BDIR)/$(TARGET_EXEC)
+
+.PHONY: minrun
+minrun: prep_dir $(BDIR)/$(MIN_TARGET_EXEC)
+	$(BDIR)/$(MIN_TARGET_EXEC)
 
 # Create directories call, -p is there to prevent error throw
 .PHONY: prep_dir

@@ -1,13 +1,15 @@
 #include <iostream>
 
 #include "modules/window/window.hpp"
+#include "modules/graphics/graphics.hpp"
 
 int main(int argc, const char *argv[])
 {
-    // Init window
-    mocha::window::initWindow(1920, 1080);
+    // Init modules
+    mocha::window::init(300, 300);
+    mocha::graphics::init();
 
-    // Render loop
+    // Game loop
     while(mocha::window::keepGameLoop())
     {
         // Game updates here

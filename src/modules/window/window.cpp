@@ -2,7 +2,7 @@
 
 
 
-void mocha::window::initWindow(int window_width, int window_height)
+void mocha::window::init(int window_width, int window_height)
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

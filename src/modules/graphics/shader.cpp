@@ -1,6 +1,10 @@
 #include "shader.hpp"
 
-mocha::graphics::Shader::Shader(const char *vertex_path, const char *fragment_path)
+mocha::graphics::Shader::Shader()
+{
+}
+
+void mocha::graphics::Shader::load(const char *vertex_path, const char *fragment_path)
 {
     // 1. retrieve source code from filePath
     std::string vertex_code;
@@ -68,4 +72,34 @@ void mocha::graphics::Shader::setInt(const char *name, int value)
 void mocha::graphics::Shader::setFload(const char *name, float value)
 {
     glUniform1f(glGetUniformLocation(id, name), value);
+}
+
+void mocha::graphics::Shader::setVec2(const char *name, glm::vec2 value)
+{
+    glUniform2fv(glGetUniformLocation(id, name), 1, &value[0]);
+}
+
+void mocha::graphics::Shader::setVec3(const char *name, glm::vec3 value)
+{
+    glUniform3fv(glGetUniformLocation(id, name), 1, &value[0]);
+}
+
+void mocha::graphics::Shader::setVec4(const char *name, glm::vec4 value)
+{
+    glUniform4fv(glGetUniformLocation(id, name), 1, &value[0]);
+}
+
+void mocha::graphics::Shader::setMat2(const char *name, glm::mat2 value)
+{
+    glUniformMatrix2fv(glGetUniformLocation(id, name), 1, GL_FALSE, &value[0][0]);
+}
+
+void mocha::graphics::Shader::setMat3(const char *name, glm::mat3 value)
+{
+    glUniformMatrix3fv(glGetUniformLocation(id, name), 1, GL_FALSE, &value[0][0]);
+}
+
+void mocha::graphics::Shader::setMat4(const char *name, glm::mat4 value)
+{
+    glUniformMatrix4fv(glGetUniformLocation(id, name), 1, GL_FALSE, &value[0][0]);
 }
