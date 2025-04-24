@@ -32,7 +32,7 @@ bool mocha::window::keepGameLoop()
 
 void mocha::window::clearWindow()
 {
-    glClearColor(0, 0, 0, 1);
+    glClearColor(1, 1, 1, 1);
     glClear(GL_COLOR_BUFFER_BIT);
 }
 

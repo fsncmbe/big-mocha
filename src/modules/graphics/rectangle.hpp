@@ -1,7 +1,10 @@
 #ifndef RECTANGLE_HPP
 #define RECTANGLE_HPP
 
+#include <iostream>
+
 #include "drawable.hpp"
+#include "glad/glad.h"
 
 namespace mocha {
 namespace graphics
@@ -9,13 +12,14 @@ namespace graphics
     class Rectangle : public Drawable
     {
     public:
-        float vertices[12];
-        int indices[6];
         
-        Rectangle();
+        // Baseline rectangle init, no effects
+        Rectangle(glm::vec2 size);
 
-        void draw(glm::mat4 trans);
+        // Draw call
+        void draw();
     private:
+        unsigned int VAO, VBO, EBO;
     };
 }
 }

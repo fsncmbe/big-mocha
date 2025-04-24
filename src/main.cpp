@@ -6,8 +6,13 @@
 int main(int argc, const char *argv[])
 {
     // Init modules
-    mocha::window::init(300, 300);
+    mocha::window::init(500, 500);
     mocha::graphics::init();
+
+    //TESTING
+
+    mocha::graphics::Rectangle rect(glm::vec2(100, 100));
+    glm::mat4 trans = glm::mat4(1.0f);
 
     // Game loop
     while(mocha::window::keepGameLoop())
@@ -18,7 +23,7 @@ int main(int argc, const char *argv[])
         mocha::window::clearWindow();
 
         // Render stuff here
-        
+        mocha::graphics::draw(&rect, trans);
 
         // Pushes all rendered stuff from buffers to the screen
         mocha::window::swapBuffers();

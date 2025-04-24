@@ -9,11 +9,13 @@
 
 #include "glad/glad.h"
 #include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 #include "GLFW/glfw3.h"
 
 #include "gtypes.hpp"
 #include "shader.hpp"
 #include "drawable.hpp"
+#include "rectangle.hpp"
 
 
 namespace mocha {
