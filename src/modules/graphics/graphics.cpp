@@ -2,7 +2,10 @@
 
 void Graphics::draw(Drawable *drawable, glm::mat4 trans)
 {
-    current_shader->setMat4("trans", trans);
+    glm::mat4 base(1.0f);
+    base *= trans;
+    base = glm::scale(base, drawable->scaler);
+    current_shader->setMat4("trans", base);
     // Sets translation uniform of the shader to the one used by the drawable
     drawable->draw();
 }

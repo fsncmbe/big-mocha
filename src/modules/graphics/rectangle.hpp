@@ -16,7 +16,7 @@ public:
     // Draw call
     void draw();
 private:
-    unsigned int VAO, VBO, EBO;
+    unsigned int VAO;
 };
 
 
