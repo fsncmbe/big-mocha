@@ -58,7 +58,9 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "codecvt": "cpp",
+        "ratio": "cpp"
     },
     "makefile.configureOnOpen": false
 }

@@ -1,33 +1,36 @@
 #include <iostream>
 
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+
 #include "modules/window/window.hpp"
 #include "modules/graphics/graphics.hpp"
 
 int main(int argc, const char *argv[])
 {
     // Init modules
-    mocha::window::init(500, 500);
-    mocha::graphics::init();
+    Window::instance()->init(500, 500);
+    Graphics::instance()->init();
 
-    //TESTING
-
-    mocha::graphics::Rectangle rect(glm::vec2(100, 100));
-    glm::mat4 trans = glm::mat4(1.0f);
+    Rectangle rect({20, 20});
+    glm::mat4 trans(1.0f);
 
     // Game loop
-    while(mocha::window::keepGameLoop())
+    while(Window::instance()->keepGameLoop())
     {
         // Game updates here
 
         // Clears window of all rendered things of last frame
-        mocha::window::clearWindow();
-
+        Window::instance()->clearWindow();
         // Render stuff here
-        mocha::graphics::draw(&rect, trans);
+        Graphics::instance()->useShader();
+        
+        Graphics::instance()->draw(&rect, trans);
 
-        // Pushes all rendered stuff from buffers to the screen
-        mocha::window::swapBuffers();
+        Window::instance()->swapBuffers();
     }
+
+    Window::instance()->closeWindow();
 
     return 0;
 }

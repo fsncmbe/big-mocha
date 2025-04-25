@@ -7,16 +7,11 @@
 #include "glm/glm.hpp"
 #include "stb/stb_image.h"
 
-namespace mocha{
-namespace graphics
+class Vertex
 {
-    class Vertex
-    {
-        glm::vec3 position;
-        glm::vec3 normal;
-        glm::vec2 tex_coords;
-    };
-}
-}
+    glm::vec3 position;
+    glm::vec3 normal;
+    glm::vec2 tex_coords;
+};
 
 #endif

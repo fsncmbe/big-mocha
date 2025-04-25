@@ -6,23 +6,19 @@
 #include "drawable.hpp"
 #include "glad/glad.h"
 
-namespace mocha {
-namespace graphics
+class Rectangle : public Drawable
 {
-    class Rectangle : public Drawable
-    {
-    public:
-        
-        // Baseline rectangle init, no effects
-        Rectangle(glm::vec2 size);
+public:
+    
+    // Baseline rectangle init, no effects
+    Rectangle(glm::vec2 size);
 
-        // Draw call
-        void draw();
-    private:
-        unsigned int VAO, VBO, EBO;
-    };
-}
-}
+    // Draw call
+    void draw();
+private:
+    unsigned int VAO, VBO, EBO;
+};
+
 
 
 #endif

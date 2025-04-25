@@ -8,6 +8,7 @@ IDIR := include
 
 # Gets all source cpps
 SRC := $(wildcard src/*.cpp)
+SRC += $(wildcard src/modules/*.cpp)
 SRC += $(wildcard src/modules/**/*.cpp)
 SRC += $(wildcard src/modules/**/*.c)
 

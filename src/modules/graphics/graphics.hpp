@@ -12,29 +12,28 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "GLFW/glfw3.h"
 
+#include "../module.hpp"
 #include "gtypes.hpp"
 #include "shader.hpp"
 #include "drawable.hpp"
 #include "rectangle.hpp"
 
-
-namespace mocha {
-namespace graphics
-{   
-
-    // Shader stuff
-    inline Shader* current_shader;
-    // shadername = shader
-    inline std::map<const char*, Shader> shader_map;
-
-    // Draw a drawable object with transformation matrix for positioning
+class Graphics : public Module
+{
+public:
+    static Graphics* instance();
     void draw(Drawable* drawable, glm::mat4 trans);
 
-    // Called before draw events to initialize shader etc.
     void init();
-    void setShader(const char* id);
-    void genShader(const char* path);
-}
-}
+    //Shader
+    void useShader();
+    std::map<std::string, Shader*> shader_map;
+
+private:
+    Graphics() {};
+
+    // Shader
+    Shader* current_shader;
+};
 
 #endif

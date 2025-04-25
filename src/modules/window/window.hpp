@@ -6,17 +6,20 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
-namespace mocha{
-namespace window
-{
-    inline GLFWwindow* window;
+#include "../module.hpp"
 
+class Window : public Module
+{
+public:
+    static Window* instance();
     void init(int window_width, int window_height);
     bool keepGameLoop();
     void clearWindow();
     void swapBuffers();
     void closeWindow();
-}
-}
+private:
+    Window() {};
+    GLFWwindow* glfw_window;
+};
 
 #endif

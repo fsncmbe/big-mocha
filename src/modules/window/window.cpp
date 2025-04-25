@@ -2,47 +2,54 @@
 
 
 
-void mocha::window::init(int window_width, int window_height)
+void Window::init(int window_width, int window_height)
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    window = glfwCreateWindow(window_width, window_height, "Game", NULL, NULL);
+    glfw_window = glfwCreateWindow(window_width, window_height, "Game", NULL, NULL);
 
-    if (window == NULL)
+    if (glfw_window == NULL)
     {
         std::cout << "Failed to create glfw window" << "\n";
         glfwTerminate();
     }
 
-    glfwMakeContextCurrent(window);
-
+    glfwMakeContextCurrent(glfw_window);
+    
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << "\n";
     }
+    glViewport(0, 0, window_width, window_height);
 }
 
-bool mocha::window::keepGameLoop()
+bool Window::keepGameLoop()
 {
-    return !glfwWindowShouldClose(window);
+    return !glfwWindowShouldClose(glfw_window);
 }
 
-void mocha::window::clearWindow()
+void Window::clearWindow()
 {
-    glClearColor(1, 1, 1, 1);
+    glClearColor(0.5f, 0.5f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void mocha::window::swapBuffers()
+void Window::swapBuffers()
 {
-    glfwSwapBuffers(window);
+    glfwSwapBuffers(glfw_window);
     glfwPollEvents();
 }
 
-void mocha::window::closeWindow()
+void Window::closeWindow()
 {
     glfwTerminate();
+}
+
+Window *Window::instance()
+{
+    static Window* instance = new Window();
+    return instance;
 }
