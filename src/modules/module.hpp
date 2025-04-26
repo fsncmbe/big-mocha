@@ -11,7 +11,6 @@ public:
     };
 
 private:
-    Module() {};
     static Module* instances[M_MAX];
 };
 

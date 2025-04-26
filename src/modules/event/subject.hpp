@@ -7,14 +7,15 @@
 #include "observer.hpp"
 
 // Send events to bound observers
+template <typename T>
 class Subject
 {
 public:
-    void notifyObservers(Event* e);
-    void addObserver(Observer* o);
-    void removeObserver(Observer* o);
+    void notifyObservers(Event<T>* e);
+    void addObserver(Observer<T>* o);
+    void removeObserver(Observer<T>* o);
 private:
-    std::vector<Observer*> observer_list;
+    std::vector<Observer<T>*> observer_list;
 };
 
 #endif
