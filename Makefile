@@ -35,7 +35,7 @@ CXX := g++
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-LIBS := ./libs/libglfw3.a -lGL -lglfw -ldl
+LIBS := -lGL -lglfw -ldl
 endif
 ifeq ($(UNAME), MSYS_NT-10.0-26100)
 LIBS := ./libs/libglfw3.a -lgdi32 -lopengl32
