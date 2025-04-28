@@ -20,7 +20,7 @@ OBJS := $(patsubst %.c,%.o,$(OBJS))
 
 MIN_SRC := $(SDIR)/main.cpp 
 MIN_SRC += $(MDIR)/glad/glad.c
-MIN_SRC += $(MDIR)/graphics/shader.cpp $(MDIR)/graphics/stb.cpp $(MDIR)/graphics/graphics.cpp
+MIN_SRC += $(MDIR)/graphics/shader.cpp $(MDIR)/graphics/rectangle.cpp $(MDIR)/graphics/stb.cpp $(MDIR)/graphics/graphics.cpp
 MIN_SRC += $(MDIR)/window/window.cpp
 
 MIN_OBJS := $(patsubst src/%,%,$(MIN_SRC))
@@ -32,8 +32,14 @@ DIRS := $(sort $(dir $(OBJS)))
 
 CXX := g++
 
-LIBS := ./libs/libglfw3.a -lgdi32 -lopengl32
+UNAME := $(shell uname)
 
+ifeq ($(UNAME), Linux)
+LIBS := ./libs/libglfw3.a -lGL -lglfw -ldl
+endif
+ifeq ($(UNAME), MSYS_NT-10.0-26100)
+LIBS := ./libs/libglfw3.a -lgdi32 -lopengl32
+endif
 # Normal run which also creates needed dirs
 all: prep_dir $(BDIR)/$(TARGET_EXEC)
 
