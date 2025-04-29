@@ -11,5 +11,4 @@ public:
     glm::vec3 scaler;
 };
 
-
 #endif

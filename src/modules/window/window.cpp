@@ -53,3 +53,8 @@ Window *Window::instance()
     static Window* instance = new Window();
     return instance;
 }
+
+Subject* Window::getSubject()
+{
+    return &subject;
+}

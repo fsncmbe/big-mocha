@@ -17,6 +17,7 @@
 #include "shader.hpp"
 #include "drawable.hpp"
 #include "rectangle.hpp"
+#include "../event/subject.hpp"
 
 class Graphics : public Module
 {
@@ -25,15 +26,19 @@ public:
     void draw(Drawable* drawable, glm::mat4 trans);
 
     void init();
-    //Shader
+    // Shader
     void useShader();
     std::map<std::string, Shader*> shader_map;
 
+    // Subject
+    Subject* getSubject();
 private:
     Graphics() {};
-
     // Shader
-    Shader* current_shader;
+    Shader* current_shader; 
+
+    // Subject
+    Subject subject;
 };
 
 #endif

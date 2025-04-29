@@ -34,9 +34,16 @@ void Graphics::init()
 
     // Sets first shader of shaders to current shader and activates it
     current_shader = shader_map["default"];
+
+    subject.notifyObservers(new Event(Event::EventType::LOGSUCCESS, "Graphics Init done"));
 }
 
 void Graphics::useShader()
 {
     current_shader->use();
+}
+
+Subject* Graphics::getSubject()
+{
+    return &subject;
 }

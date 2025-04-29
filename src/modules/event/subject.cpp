@@ -1,7 +1,6 @@
 #include "subject.hpp"
 
-template <typename T>
-inline void Subject<T>::notifyObservers(Event<T>* e)
+void Subject::notifyObservers(Event* e)
 {
     for (Observer* o: observer_list)
     {
@@ -9,14 +8,22 @@ inline void Subject<T>::notifyObservers(Event<T>* e)
     }
 }
 
-template <typename T>
-void Subject<T>::addObserver(Observer<T> *o)
+void Subject::addObserver(Observer* o)
 {
     observer_list.push_back(o);
 }
 
-template <typename T>
-void Subject<T>::removeObserver(Observer<T> *o)
+void Subject::removeObserver(Observer* o)
 {
-    observer_list.erase(std::__find_if(observer_list.begin(), observer_list.end(), o));
+    for (
+        std::vector<Observer*>::iterator iter = observer_list.begin(); 
+        iter != observer_list.end();
+        ++iter)
+    {
+        if(*iter == o)
+        {
+            observer_list.erase(iter);
+            break;
+        }
+    }
 }

@@ -5,11 +5,17 @@
 
 #include "modules/window/window.hpp"
 #include "modules/graphics/graphics.hpp"
+#include "modules/log/log.hpp"
 
 int main(int argc, const char *argv[])
 {
-    // Init modules
+    // First add observers, then init
+    Log::instance()->init();
+
+    Window::instance()->getSubject()->addObserver(Log::instance());
     Window::instance()->init(500, 500);
+
+    Graphics::instance()->getSubject()->addObserver(Log::instance());
     Graphics::instance()->init();
 
     Rectangle rect({0.5, 0.5});
@@ -19,7 +25,6 @@ int main(int argc, const char *argv[])
     while(Window::instance()->keepGameLoop())
     {
         // Game updates here
-        
 
         // Clears window of all rendered things of last frame
         Window::instance()->clearWindow();

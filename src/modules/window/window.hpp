@@ -7,6 +7,7 @@
 #include "GLFW/glfw3.h"
 
 #include "../module.hpp"
+#include "../event/subject.hpp"
 
 class Window : public Module
 {
@@ -17,9 +18,16 @@ public:
     void clearWindow();
     void swapBuffers();
     void closeWindow();
+
+    // Subject
+    Subject* getSubject();
+    
 private:
     Window() {};
     GLFWwindow* glfw_window;
+
+    // Subject
+    Subject subject;
 };
 
 #endif
