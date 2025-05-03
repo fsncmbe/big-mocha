@@ -21,6 +21,7 @@ public:
     void onNotify(Event* e);
 private:
     Log() {};
+    std::string eventTypeToString(Event* e);
 };
 
 #endif

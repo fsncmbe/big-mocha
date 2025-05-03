@@ -48,6 +48,17 @@ void Window::closeWindow()
     glfwTerminate();
 }
 
+void Window::getInputs()
+{
+    for (auto &pair : keys)
+    {
+        if (glfwGetKey(instance()->glfw_window, pair.second) == GLFW_PRESS)
+            subject.notifyObservers(new Event(Event::EventType::KEY_DOWN, pair.first));
+        if (glfwGetKey(instance()->glfw_window, pair.second) == GLFW_RELEASE)
+            subject.notifyObservers(new Event(Event::EventType::KEY_UP, pair.first));
+    }
+}
+
 Window *Window::instance()
 {
     static Window* instance = new Window();

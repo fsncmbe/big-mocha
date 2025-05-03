@@ -25,6 +25,7 @@ int main(int argc, const char *argv[])
     while(Window::instance()->keepGameLoop())
     {
         // Game updates here
+        Window::instance()->getInputs();
 
         // Clears window of all rendered things of last frame
         Window::instance()->clearWindow();

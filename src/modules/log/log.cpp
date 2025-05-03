@@ -26,5 +26,20 @@ void Log::onNotify(Event* e)
         case Event::EventType::LOGSUCCESS:
             log("\033[1;31mSUCCESS:\033[0m" + e->getMessage());
             break;
+        default:
+            log("\033[1;31m" + eventTypeToString(e) + ":\033[0m" + e->getMessage());
+            break;
+    };
+}
+
+std::string Log::eventTypeToString(Event* e)
+{
+    switch(e->getType())
+    {
+        case Event::EventType::KEY_DOWN:
+            return "KEY_DOWN";
+        case Event::EventType::KEY_UP:
+            return "KEY_UP";
     }
+    return "";
 }
