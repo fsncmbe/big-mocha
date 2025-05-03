@@ -9,6 +9,7 @@ void Graphics::draw(Drawable *drawable, glm::mat4 trans)
     // Sets translation uniform of the shader to the one used by the drawable
     drawable->draw();
 }
+
 Graphics* Graphics::instance()
 {
     static Graphics* instance = new Graphics();
@@ -35,7 +36,7 @@ void Graphics::init()
     // Sets first shader of shaders to current shader and activates it
     current_shader = shader_map["default"];
 
-    subject.notifyObservers(new Event(Event::EventType::LOGSUCCESS, "Graphics Init done"));
+    subject.notifyObservers(new Event(Event::Type::LOGSUCCESS, "Graphics Init done"));
 }
 
 void Graphics::useShader()

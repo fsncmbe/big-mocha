@@ -60,7 +60,17 @@
         "variant": "cpp",
         "stdio.h": "c",
         "codecvt": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "mutex": "cpp",
+        "ranges": "cpp",
+        "semaphore": "cpp",
+        "stdfloat": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     },
     "makefile.configureOnOpen": false
 }

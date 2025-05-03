@@ -7,18 +7,18 @@
 class Event
 {
 public:
-    enum class EventType {
+    enum class Type {
         KEY_DOWN,
         KEY_UP,
         LOGERROR,
         LOGSUCCESS
     };
-    Event(EventType type, std::string message) : type(type), message(message) {};
+    Event(Type type, std::string message) : type(type), message(message) {};
 
-    EventType getType();
+    Type getType();
     std::string getMessage();
 protected:
-    EventType type;
+    Type type;
     std::string message;
 };
 

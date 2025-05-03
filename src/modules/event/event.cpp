@@ -1,6 +1,6 @@
 #include "event.hpp"
 
-Event::EventType Event::getType()
+Event::Type Event::getType()
 {
     return type;
 }
