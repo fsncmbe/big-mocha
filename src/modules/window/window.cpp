@@ -35,7 +35,8 @@ void Window::init(glm::vec2 window_size)
   {
     std::cout << "Failed to initialize GLAD" << "\n";
   }
-  glViewport(0, 0, window_size.x, window_size.y);
+
+  subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Window init done"));
 }
 
 bool Window::keepGameLoop()

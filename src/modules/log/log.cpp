@@ -2,11 +2,6 @@
 
 namespace mocha {
 
-void Log::init()
-{
-
-}
-
 void Log::log(std::string message)
 {
   std::cout << message << "\n"; 

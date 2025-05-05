@@ -17,16 +17,12 @@ int main(int argc, const char *argv[])
   // Settings
   glm::vec2 screen_size(500, 500);
 
-  // Init modules 
-  log->init();
   window->getSubject()->addObserver(log);
   window->getSubject()->addObserver(graphics);
-  window->init(screen_size);
   graphics->getSubject()->addObserver(log);
-  graphics->init();
 
-  //Set graphics projection
-  graphics->getCamera()->processProjectionChange(screen_size);
+  window->init(screen_size);
+  graphics->init();
 
   // Pre render stuff
   mocha::Cube cube({1.0f, 1.0f, 1.0f});

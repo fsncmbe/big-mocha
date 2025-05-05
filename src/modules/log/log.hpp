@@ -14,7 +14,6 @@ class Log : public Observer
 {
  friend class Module<Log>;
  public:
-  void init();
   void log(std::string message);
 
   // Observer

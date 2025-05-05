@@ -18,7 +18,7 @@ void Graphics::init()
 
   current_shader_ = shader_map_["default"];
 
-  subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Graphics Init done"));
+  subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Graphics init done"));
 }
 
 void Graphics::readyRender()
