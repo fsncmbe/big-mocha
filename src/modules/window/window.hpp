@@ -7,6 +7,7 @@
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+#include "glm/glm.hpp"
 
 #include "../module.hpp"
 #include "../event/subject.hpp"
@@ -17,7 +18,7 @@ class Window
 {
  friend class Module<Window>;
  public:
-  void init(int window_width, int window_height);
+  void init(glm::vec2 window_size);
   bool keepGameLoop();
   void clearWindow();
   void swapBuffers();

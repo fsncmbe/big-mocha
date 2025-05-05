@@ -9,7 +9,7 @@ class Drawable
 {
  public:
   glm::vec3 scaler_;
-  virtual void draw();
+  virtual void draw() = 0;
  protected:
   unsigned int vao_;
 };

@@ -2,14 +2,14 @@
 
 namespace mocha {
 
-void Window::init(int window_width, int window_height)
+void Window::init(glm::vec2 window_size)
 {
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-  glfw_window_ = glfwCreateWindow(window_width, window_height, "Game", NULL, NULL);
+  glfw_window_ = glfwCreateWindow(window_size.x, window_size.y, "Game", NULL, NULL);
 
   if (glfw_window_ == NULL)
   {
@@ -23,7 +23,7 @@ void Window::init(int window_width, int window_height)
   {
     std::cout << "Failed to initialize GLAD" << "\n";
   }
-  glViewport(0, 0, window_width, window_height);
+  glViewport(0, 0, window_size.x, window_size.y);
 }
 
 bool Window::keepGameLoop()

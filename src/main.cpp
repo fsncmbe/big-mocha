@@ -14,36 +14,39 @@ int main(int argc, const char *argv[])
   mocha::Window* window = mocha::Module<mocha::Window>::inst();
   mocha::Graphics* graphics = mocha::Module<mocha::Graphics>::inst();
 
+  // Settings
+  glm::vec2 screen_size(500, 500);
+
   // Init modules 
   log->init();
   window->getSubject()->addObserver(log);
-  window->init(500, 500);
+  window->init(screen_size);
   graphics->getSubject()->addObserver(log);
   graphics->init();
 
+  //Set graphics projection
+  graphics->getCamera()->processProjectionChange(screen_size);
+
   // Pre render stuff
-  mocha::Rectangle rect({0.5, 0.5});
-  glm::mat4 trans(1.0f);
+  mocha::Cube cube({1.0f, 1.0f, 1.0f});
+  glm::vec3 trans({5.0f, 0.0f, -20.0f});
 
   // Game loop
   while(window->keepGameLoop())
   {
     // Game updates here
     window->getInputs();
-
-    // Clears window of all rendered things of last frame
     window->clearWindow();
 
-    // Render stuff here
-    graphics->useShader();
     
-    graphics->draw(&rect, trans);
+    // Render
+    graphics->readyRender();
 
-    // Swaps buffer, ender of render
+    graphics->draw(&cube, trans);
+
     window->swapBuffers();
   }
 
   window->closeWindow();
-
   return 0;
 }

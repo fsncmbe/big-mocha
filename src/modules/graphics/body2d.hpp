@@ -9,7 +9,7 @@ namespace mocha {
 
 class Rectangle : public Drawable
 {
-  public:
+ public:
   Rectangle(glm::vec2 size);
   void draw();
 };

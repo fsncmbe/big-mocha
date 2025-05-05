@@ -6,9 +6,17 @@ void Graphics::draw(Drawable *drawable, glm::mat4 trans)
 {
   glm::mat4 base(1.0f);
   base *= trans;
-  // Base = glm::scale(base, drawable->scaler);
   current_shader_->setMat4("trans", base);
-  // Sets translation uniform of the shader to the one used by the drawable
+
+  drawable->draw();
+}
+
+void Graphics::draw(Drawable *drawable, glm::vec3 pos)
+{
+  glm::mat4 base(1.0f);
+  base = glm::translate(base, pos);
+  current_shader_->setMat4("trans", base);
+
   drawable->draw();
 }
 
@@ -32,14 +40,31 @@ void Graphics::init()
   subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Graphics Init done"));
 }
 
+void Graphics::readyRender()
+{
+  useShader();
+  getShader()->setMat4("projection", cam_.getProjectionMatrix());
+  getShader()->setMat4("view", cam_.getViewMatrix());
+}
+
 void Graphics::useShader()
 {
   current_shader_->use();
 }
 
+Shader *Graphics::getShader()
+{
+  return current_shader_;
+}
+
 Subject* Graphics::getSubject()
 {
   return &subject_;
+}
+
+Camera* Graphics::getCamera()
+{
+  return &cam_;
 }
 
 }

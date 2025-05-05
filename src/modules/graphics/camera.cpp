@@ -2,13 +2,14 @@
 
 namespace mocha {
 
-Camera::Camera(glm::vec3 position) 
-    : position_(position), 
+Camera::Camera() 
+    : position_({0, 0, 0}),
       front_({0, 0, -1}), 
       up_({0, 1, 0}), 
       world_up_(up_),
       yaw_(-90.0f), 
-      pitch_(0.0f), 
+      pitch_(0.0f),
+      fov_(45.0f),
       movement_speed_(2.5f), 
       mouse_sensitivity_(0.1f),
       zoom_(45.0f) {
@@ -18,6 +19,11 @@ Camera::Camera(glm::vec3 position)
 glm::mat4 Camera::getViewMatrix()
 {
   return glm::lookAt(position_, position_+front_, up_);
+}
+
+glm::mat4 Camera::getProjectionMatrix()
+{
+  return projection_;
 }
 
 void Camera::processKeyboard(Movement dir, float dt)
@@ -56,6 +62,13 @@ void Camera::processMouseScroll(float offset)
       zoom_ = 1.0f;
   if (zoom_ > 45.0f)
       zoom_ = 45.0f;
+}
+
+void Camera::processProjectionChange(glm::vec2 window_size)
+{
+  projection_ = glm::perspective(glm::radians(fov_), 
+                                (float)window_size.x/(float)window_size.y, 
+                                0.1f, 100.0f);
 }
 
 void Camera::updateCameraVectors()

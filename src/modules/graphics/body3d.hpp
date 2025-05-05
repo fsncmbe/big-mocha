@@ -10,7 +10,7 @@ namespace mocha {
 class Cube : public Drawable
 {
  public:
-  Cube(glm::vec2 size);
+  Cube(glm::vec3 size);
   void draw();
 };
 
