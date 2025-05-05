@@ -8,15 +8,14 @@
 
 class Rectangle : public Drawable
 {
-public:
-    
-    // Baseline rectangle init, no effects
-    Rectangle(glm::vec2 size);
+ public:
+  // Baseline rectangle init, no effects
+  Rectangle(glm::vec2 size);
 
-    // Draw call
-    void draw();
-private:
-    unsigned int VAO;
+  // Draw call
+  void draw();
+ private:
+  unsigned int VAO;
 };
 
 

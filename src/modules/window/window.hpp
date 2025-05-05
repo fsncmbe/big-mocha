@@ -13,35 +13,35 @@
 
 class Window : public Module
 {
-public:
-    // Window
-    static Window* instance();
-    void init(int window_width, int window_height);
-    bool keepGameLoop();
-    void clearWindow();
-    void swapBuffers();
-    void closeWindow();
+ public:
+  // Window
+  static Window* instance();
+  void init(int window_width, int window_height);
+  bool keepGameLoop();
+  void clearWindow();
+  void swapBuffers();
+  void closeWindow();
 
-    // Input
-    void getInputs();
+  // Input
+  void getInputs();
 
-    // Subject
-    Subject* getSubject();
+  // Subject
+  Subject* getSubject();
     
-private:
-    Window() {};
-    GLFWwindow* glfw_window;
+ private:
+  Window() {};
+  GLFWwindow* glfw_window;
 
-    // Input
-    std::map<std::string, int> keys = {
-        {"W", GLFW_KEY_W},
-        {"A", GLFW_KEY_A},
-        {"S", GLFW_KEY_S},
-        {"D", GLFW_KEY_D}
-    };
+  // Input
+  std::map<std::string, int> keys = {
+    {"W", GLFW_KEY_W},
+    {"A", GLFW_KEY_A},
+    {"S", GLFW_KEY_S},
+    {"D", GLFW_KEY_D}
+  };
 
-    // Subject
-    Subject subject;
+  // Subject
+  Subject subject;
 };
 
 #endif

@@ -6,12 +6,13 @@
 // Interface for commands
 class Command
 {
-public:
-    Command(Entity* entity) : entity(entity) {};
-    // Executes a command on given Entity
-    virtual void execute() = 0;
-protected:
-    Entity* entity;
+ public:
+  Command(Entity* entity) : entity(entity) {};
+  // Executes a command on given Entity
+  virtual void execute() = 0;
+  
+ protected:
+  Entity* entity;
 };
 
 #endif

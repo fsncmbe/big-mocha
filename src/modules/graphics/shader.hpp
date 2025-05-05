@@ -11,29 +11,29 @@
 
 class Shader
 {
-public:
-    unsigned int id;
-    
-    // Initialize shader with file
-    Shader();
-    void load(const char* vertex_path, const char* fragment_path);
-    
-    // Set current shader to this one
-    void use();
+ public:
+  unsigned int id;
+  
+  // Initialize shader with file
+  Shader();
+  void load(const char* vertex_path, const char* fragment_path);
+  
+  // Set current shader to this one
+  void use();
 
-    // Set uniform variables 
-    void setBool(const char* name, bool value);
-    void setInt(const char* name, int value);
-    void setFload(const char* name, float value);
-    void setVec2(const char* name, glm::vec2 value);
-    void setVec3(const char* name, glm::vec3 value);
-    void setVec4(const char* name, glm::vec4 value);
-    void setMat2(const char* name, glm::mat2 value);
-    void setMat3(const char* name, glm::mat3 value);
-    void setMat4(const char* name, glm::mat4 value);
+  // Set uniform variables 
+  void setBool(const char* name, bool value);
+  void setInt(const char* name, int value);
+  void setFload(const char* name, float value);
+  void setVec2(const char* name, glm::vec2 value);
+  void setVec3(const char* name, glm::vec3 value);
+  void setVec4(const char* name, glm::vec4 value);
+  void setMat2(const char* name, glm::mat2 value);
+  void setMat3(const char* name, glm::mat3 value);
+  void setMat4(const char* name, glm::mat4 value);
 
-private:
-    void checkCompileErrors(unsigned int shader, std::string type);
+ private:
+  void checkCompileErrors(unsigned int shader, std::string type);
 };
 
 

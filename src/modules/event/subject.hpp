@@ -9,13 +9,13 @@
 // Send events to bound observers
 class Subject
 {
-public:
-    void notifyObservers(Event* e);
-    void addObserver(Observer* o);
-    void removeObserver(Observer* o);
-    Subject() {};
-private:
-    std::vector<Observer*> observer_list;
+ public:
+  void notifyObservers(Event* e);
+  void addObserver(Observer* o);
+  void removeObserver(Observer* o);
+  Subject() {};
+ private:
+  std::vector<Observer*> observer_list;
 };
 
 #endif

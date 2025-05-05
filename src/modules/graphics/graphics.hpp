@@ -21,24 +21,24 @@
 
 class Graphics : public Module
 {
-public:
-    static Graphics* instance();
-    void draw(Drawable* drawable, glm::mat4 trans);
+ public:
+  static Graphics* instance();
+  void draw(Drawable* drawable, glm::mat4 trans);
 
-    void init();
-    // Shader
-    void useShader();
-    std::map<std::string, Shader*> shader_map;
+  void init();
+  // Shader
+  void useShader();
+  std::map<std::string, Shader*> shader_map;
 
-    // Subject
-    Subject* getSubject();
-private:
-    Graphics() {};
-    // Shader
-    Shader* current_shader; 
+  // Subject
+  Subject* getSubject();
+ private:
+  Graphics() {};
+  // Shader
+  Shader* current_shader; 
 
-    // Subject
-    Subject subject;
+  // Subject
+  Subject subject;
 };
 
 #endif

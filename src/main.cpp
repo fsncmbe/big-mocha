@@ -9,37 +9,37 @@
 
 int main(int argc, const char *argv[])
 {
-    // First add observers, then init
-    Log::instance()->init();
+  // First add observers, then init
+  Log::instance()->init();
 
-    Window::instance()->getSubject()->addObserver(Log::instance());
-    Window::instance()->init(500, 500);
+  Window::instance()->getSubject()->addObserver(Log::instance());
+  Window::instance()->init(500, 500);
 
-    Graphics::instance()->getSubject()->addObserver(Log::instance());
-    Graphics::instance()->init();
+  Graphics::instance()->getSubject()->addObserver(Log::instance());
+  Graphics::instance()->init();
 
-    Rectangle rect({0.5, 0.5});
-    glm::mat4 trans(1.0f);
+  Rectangle rect({0.5, 0.5});
+  glm::mat4 trans(1.0f);
 
-    // Game loop
-    while(Window::instance()->keepGameLoop())
-    {
-        // Game updates here
-        Window::instance()->getInputs();
+  // Game loop
+  while(Window::instance()->keepGameLoop())
+  {
+    // Game updates here
+    Window::instance()->getInputs();
 
-        // Clears window of all rendered things of last frame
-        Window::instance()->clearWindow();
+    // Clears window of all rendered things of last frame
+    Window::instance()->clearWindow();
 
-        // Render stuff here
-        Graphics::instance()->useShader();
-        
-        Graphics::instance()->draw(&rect, trans);
+    // Render stuff here
+    Graphics::instance()->useShader();
+    
+    Graphics::instance()->draw(&rect, trans);
 
-        // Swaps buffer, ender of render
-        Window::instance()->swapBuffers();
-    }
+    // Swaps buffer, ender of render
+    Window::instance()->swapBuffers();
+  }
 
-    Window::instance()->closeWindow();
+  Window::instance()->closeWindow();
 
-    return 0;
+  return 0;
 }

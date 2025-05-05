@@ -11,17 +11,17 @@
 // Singleton Module log
 class Log : public Module, public Observer
 {
-public:
-    static Log* instance();
-    
-    void init();
-    void log(std::string message);
+ public:
+  static Log* instance();
+  
+  void init();
+  void log(std::string message);
 
-    // Observer
-    void onNotify(Event* e);
-private:
-    Log() {};
-    std::string eventTypeToString(Event* e);
+  // Observer
+  void onNotify(Event* e);
+ private:
+  Log() {};
+  std::string eventTypeToString(Event* e);
 };
 
 #endif

@@ -2,10 +2,10 @@
 
 Event::Type Event::getType()
 {
-    return type;
+  return type;
 }
 
 std::string Event::getMessage()
 {
-    return message;
+  return message;
 }

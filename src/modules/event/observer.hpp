@@ -5,10 +5,10 @@
 
 class Observer
 {
-public:
-    virtual void onNotify(Event* e) = 0;
-
-private:
+ public:
+  virtual void onNotify(Event* e) = 0;
+  
+ private:
 };
 
 #endif

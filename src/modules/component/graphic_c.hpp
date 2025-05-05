@@ -9,17 +9,17 @@
 // Graphic component for an entity
 class Graphic_c : public Component
 {
-public:
-    void update();
+ public:
+  void update();
 
-    // Render call for all drawable things
-    void render(glm::mat4 trans);
+  // Render call for all drawable things
+  void render(glm::mat4 trans);
 
-    // Defines Drawable for component
-    void defDrawable(Drawable* draw);
-private:
+  // Defines Drawable for component
+  void defDrawable(Drawable* draw);
+ private:
 
-    Drawable* drawable;
+  Drawable* drawable;
 };
 
 #endif
