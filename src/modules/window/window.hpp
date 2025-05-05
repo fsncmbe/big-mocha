@@ -12,6 +12,10 @@
 #include "../module.hpp"
 #include "../event/subject.hpp"
 
+namespace {
+  void windowSizeChange(GLFWwindow* window, int width, int height);
+}
+
 namespace mocha {
 
 class Window

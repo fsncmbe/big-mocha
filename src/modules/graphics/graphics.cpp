@@ -2,27 +2,8 @@
 
 namespace mocha {
 
-void Graphics::draw(Drawable *drawable, glm::mat4 trans)
-{
-  glm::mat4 base(1.0f);
-  base *= trans;
-  current_shader_->setMat4("trans", base);
-
-  drawable->draw();
-}
-
-void Graphics::draw(Drawable *drawable, glm::vec3 pos)
-{
-  glm::mat4 base(1.0f);
-  base = glm::translate(base, pos);
-  current_shader_->setMat4("trans", base);
-
-  drawable->draw();
-}
-
 void Graphics::init()
 {
-
   std::string path = "media/shaders/";
   
   std::vector<std::string> shaders = {
@@ -47,6 +28,24 @@ void Graphics::readyRender()
   getShader()->setMat4("view", cam_.getViewMatrix());
 }
 
+void Graphics::draw(Drawable *drawable, glm::mat4 trans)
+{
+  glm::mat4 base(1.0f);
+  base *= trans;
+  current_shader_->setMat4("trans", base);
+
+  drawable->draw();
+}
+
+void Graphics::draw(Drawable *drawable, glm::vec3 pos)
+{
+  glm::mat4 base(1.0f);
+  base = glm::translate(base, pos);
+  current_shader_->setMat4("trans", base);
+
+  drawable->draw();
+}
+
 void Graphics::useShader()
 {
   current_shader_->use();
@@ -67,4 +66,18 @@ Camera* Graphics::getCamera()
   return &cam_;
 }
 
+void Graphics::onNotify(Event* e)
+{
+  switch(e->getType())
+  {
+    case Event::Type::kWindowSizeChange: 
+    {
+      glm::vec3 tvec = e->getVec3();
+      cam_.processProjectionChange({tvec.x, tvec.y});
+      return;
+    }
+    default :
+      return;
+  }
+}
 }

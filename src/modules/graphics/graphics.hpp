@@ -22,7 +22,7 @@
 
 namespace mocha {
 
-class Graphics
+class Graphics : public Observer
 {
  friend class Module<Graphics>;
  public:
@@ -40,6 +40,9 @@ class Graphics
 
   // Camera
   Camera* getCamera();
+
+  // Observer
+  void onNotify(Event* e);
 
  private:
   Graphics() {};

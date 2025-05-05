@@ -1,5 +1,16 @@
 #include "window.hpp"
 
+namespace {
+
+void windowSizeChange(GLFWwindow *window, int width, int height)
+{
+  glViewport(0, 0, width, height);
+  mocha::Module<mocha::Window>::inst()->getSubject()->notifyObservers(new mocha::Event(mocha::Event::Type::kWindowSizeChange, "", 0, {width, height, 0}));
+}
+
+}
+
+
 namespace mocha {
 
 void Window::init(glm::vec2 window_size)
@@ -18,6 +29,7 @@ void Window::init(glm::vec2 window_size)
   }
 
   glfwMakeContextCurrent(glfw_window_);
+  glfwSetFramebufferSizeCallback(glfw_window_, windowSizeChange);
   
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
   {

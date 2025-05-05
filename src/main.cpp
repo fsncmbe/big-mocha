@@ -20,6 +20,7 @@ int main(int argc, const char *argv[])
   // Init modules 
   log->init();
   window->getSubject()->addObserver(log);
+  window->getSubject()->addObserver(graphics);
   window->init(screen_size);
   graphics->getSubject()->addObserver(log);
   graphics->init();
@@ -38,7 +39,6 @@ int main(int argc, const char *argv[])
     window->getInputs();
     window->clearWindow();
 
-    
     // Render
     graphics->readyRender();
 

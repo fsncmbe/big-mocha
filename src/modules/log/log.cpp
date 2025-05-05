@@ -24,7 +24,8 @@ void Log::onNotify(Event* e)
       log("\033[1;31mSUCCESS:\033[0m" + e->getMessage());
       break;
     default:
-      log("\033[1;31m" + eventTypeToString(e) + ":\033[0m" + e->getMessage());
+      if (eventTypeToString(e) != "")
+        log("\033[1;31m" + eventTypeToString(e) + ":\033[0m" + e->getMessage());
       break;
   };
 }
@@ -37,8 +38,9 @@ std::string Log::eventTypeToString(Event* e)
       return "KEY_DOWN";
     case Event::Type::kKeyUp:
       return "KEY_UP";
+    default:
+      return "";
   }
-  return "";
 }
 
 }
