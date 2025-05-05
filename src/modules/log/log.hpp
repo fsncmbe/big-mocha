@@ -8,20 +8,22 @@
 #include "../event/observer.hpp"
 #include "../event/event.hpp"
 
-// Singleton Module log
-class Log : public Module, public Observer
+namespace mocha {
+
+class Log : public Observer
 {
+ friend class Module<Log>;
  public:
-  static Log* instance();
-  
   void init();
   void log(std::string message);
 
   // Observer
   void onNotify(Event* e);
+
  private:
   Log() {};
   std::string eventTypeToString(Event* e);
 };
 
+}
 #endif

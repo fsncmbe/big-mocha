@@ -1,8 +1,10 @@
 #include "subject.hpp"
 
+namespace mocha {
+
 void Subject::notifyObservers(Event* e)
 {
-  for (Observer* o: observer_list)
+  for (Observer* o: observer_list_)
   {
       o->onNotify(e);
   }
@@ -10,20 +12,22 @@ void Subject::notifyObservers(Event* e)
 
 void Subject::addObserver(Observer* o)
 {
-  observer_list.push_back(o);
+  observer_list_.push_back(o);
 }
 
 void Subject::removeObserver(Observer* o)
 {
   for (
-      std::vector<Observer*>::iterator iter = observer_list.begin(); 
-      iter != observer_list.end();
-      ++iter)
+    std::vector<Observer*>::iterator iter = observer_list_.begin(); 
+    iter != observer_list_.end();
+    ++iter)
   {
-      if(*iter == o)
-      {
-          observer_list.erase(iter);
-          break;
-      }
+    if(*iter == o)
+    {
+      observer_list_.erase(iter);
+      break;
+    }
   }
+}
+
 }

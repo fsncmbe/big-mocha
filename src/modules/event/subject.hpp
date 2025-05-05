@@ -6,16 +6,20 @@
 #include "event.hpp"
 #include "observer.hpp"
 
-// Send events to bound observers
+namespace mocha {
+
 class Subject
 {
  public:
+  Subject() {};
   void notifyObservers(Event* e);
   void addObserver(Observer* o);
   void removeObserver(Observer* o);
-  Subject() {};
+
  private:
-  std::vector<Observer*> observer_list;
+  std::vector<Observer*> observer_list_;
 };
+
+}
 
 #endif

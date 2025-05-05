@@ -3,24 +3,27 @@
 
 #include <string>
 
-// Event class
-class Event
+namespace mocha {
+
+class Event 
 {
  public:
   enum class Type {
-      KEY_DOWN,
-      KEY_UP,
-      LOGERROR,
-      LOGSUCCESS
+    kKeyDown,
+    kKeyUp,
+    kLogError,
+    kLogSuccess
   };
-  Event(Type type, std::string message) : type(type), message(message) {};
+
+  Event(Type type, std::string message) : type_(type), message_(message) {};
 
   Type getType();
   std::string getMessage();
+
  protected:
-  Type type;
-  std::string message;
+  Type        type_;
+  std::string message_;
 };
 
-
+}
 #endif

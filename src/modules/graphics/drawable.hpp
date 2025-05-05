@@ -3,12 +3,17 @@
 
 #include "glm/glm.hpp"
 
-// Used as Supertype for all drawable objects
+namespace mocha {
+
 class Drawable
 {
  public:
-  virtual void draw() = 0;
-  glm::vec3 scaler;
+  glm::vec3 scaler_;
+  virtual void draw();
+ protected:
+  unsigned int vao_;
 };
+
+}
 
 #endif

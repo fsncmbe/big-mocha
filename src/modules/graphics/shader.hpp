@@ -9,19 +9,15 @@
 #include "glad/glad.h"
 #include "glm/glm.hpp"
 
+namespace mocha {
+
 class Shader
 {
  public:
-  unsigned int id;
-  
-  // Initialize shader with file
   Shader();
   void load(const char* vertex_path, const char* fragment_path);
-  
-  // Set current shader to this one
   void use();
 
-  // Set uniform variables 
   void setBool(const char* name, bool value);
   void setInt(const char* name, int value);
   void setFload(const char* name, float value);
@@ -33,8 +29,10 @@ class Shader
   void setMat4(const char* name, glm::mat4 value);
 
  private:
+  unsigned int id_;
   void checkCompileErrors(unsigned int shader, std::string type);
 };
 
+}
 
 #endif

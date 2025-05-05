@@ -1,17 +1,23 @@
 #ifndef MODULE_HPP
 #define MODULE_HPP
 
+namespace mocha {
+
+template <typename T>
 class Module
 {
  public:
-  enum ModuleTypes{
-    M_GRAPHICS,
-    M_WINDOW,
-    M_MAX
-  };
+  static T* inst()
+  {
+    static T instance;
+    return &instance;
+  }
 
- private:
-  static Module* instances[M_MAX];
+  protected:
+  Module() {};
+  ~Module() {};
 };
+
+}
 
 #endif

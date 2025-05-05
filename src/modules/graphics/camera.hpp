@@ -5,41 +5,41 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-enum CameraMovement
-{
-  FORWARD,
-  BACKWARD,
-  LEFT,
-  RIGHT
-};
+namespace mocha {
 
 class Camera
 {
  public:
-  glm::vec3   position;
-  glm::vec3   front;
-  glm::vec3   up;
-  glm::vec3   right;
-  glm::vec3   world_up;
-
-  float       yaw;
-  float       pitch;
-  
-  float       movement_speed;
-  float       mouse_sensitivity;
-  float       zoom;
+  enum Movement
+  {
+    kForward,
+    kBackward,
+    kLeft,
+    kRight
+  };
 
   Camera(glm::vec3 position = glm::vec3(0.0f));
 
   glm::mat4   getViewMatrix();
-  void        processKeyboard(CameraMovement c_m, float delta_time);
+  void        processKeyboard(Movement dir, float dt);
   void        processMouseMovement(float x_offset, float y_offset);
   void        processMouseScroll(float offset);
 
  private:
   void        updateCameraVectors();
+
+  glm::vec3   position_;
+  glm::vec3   front_;
+  glm::vec3   up_;
+  glm::vec3   right_;
+  glm::vec3   world_up_;
+  float       yaw_;
+  float       pitch_;
+  float       movement_speed_;
+  float       mouse_sensitivity_;
+  float       zoom_;
 };
 
-
+}
 
 #endif

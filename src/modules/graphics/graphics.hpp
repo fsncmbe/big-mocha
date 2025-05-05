@@ -16,29 +16,34 @@
 #include "gtypes.hpp"
 #include "shader.hpp"
 #include "drawable.hpp"
-#include "rectangle.hpp"
+#include "body3d.hpp"
 #include "../event/subject.hpp"
 
-class Graphics : public Module
+namespace mocha {
+
+class Graphics
 {
+ friend class Module<Graphics>;
  public:
-  static Graphics* instance();
+  void init();
   void draw(Drawable* drawable, glm::mat4 trans);
 
-  void init();
   // Shader
   void useShader();
-  std::map<std::string, Shader*> shader_map;
 
   // Subject
   Subject* getSubject();
+
  private:
   Graphics() {};
+
   // Shader
-  Shader* current_shader; 
+  std::map<std::string, Shader*> shader_map_;
+  Shader* current_shader_; 
 
   // Subject
-  Subject subject;
+  Subject subject_;
 };
 
+}
 #endif

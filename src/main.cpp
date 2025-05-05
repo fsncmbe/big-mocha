@@ -9,37 +9,41 @@
 
 int main(int argc, const char *argv[])
 {
-  // First add observers, then init
-  Log::instance()->init();
+  // Bind instances 
+  mocha::Log* log = mocha::Module<mocha::Log>::inst();
+  mocha::Window* window = mocha::Module<mocha::Window>::inst();
+  mocha::Graphics* graphics = mocha::Module<mocha::Graphics>::inst();
 
-  Window::instance()->getSubject()->addObserver(Log::instance());
-  Window::instance()->init(500, 500);
+  // Init modules 
+  log->init();
+  window->getSubject()->addObserver(log);
+  window->init(500, 500);
+  graphics->getSubject()->addObserver(log);
+  graphics->init();
 
-  Graphics::instance()->getSubject()->addObserver(Log::instance());
-  Graphics::instance()->init();
-
-  Rectangle rect({0.5, 0.5});
+  // Pre render stuff
+  mocha::Rectangle rect({0.5, 0.5});
   glm::mat4 trans(1.0f);
 
   // Game loop
-  while(Window::instance()->keepGameLoop())
+  while(window->keepGameLoop())
   {
     // Game updates here
-    Window::instance()->getInputs();
+    window->getInputs();
 
     // Clears window of all rendered things of last frame
-    Window::instance()->clearWindow();
+    window->clearWindow();
 
     // Render stuff here
-    Graphics::instance()->useShader();
+    graphics->useShader();
     
-    Graphics::instance()->draw(&rect, trans);
+    graphics->draw(&rect, trans);
 
     // Swaps buffer, ender of render
-    Window::instance()->swapBuffers();
+    window->swapBuffers();
   }
 
-  Window::instance()->closeWindow();
+  window->closeWindow();
 
   return 0;
 }

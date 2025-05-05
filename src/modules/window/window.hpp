@@ -11,11 +11,12 @@
 #include "../module.hpp"
 #include "../event/subject.hpp"
 
-class Window : public Module
+namespace mocha {
+
+class Window
 {
+ friend class Module<Window>;
  public:
-  // Window
-  static Window* instance();
   void init(int window_width, int window_height);
   bool keepGameLoop();
   void clearWindow();
@@ -30,10 +31,10 @@ class Window : public Module
     
  private:
   Window() {};
-  GLFWwindow* glfw_window;
+  GLFWwindow* glfw_window_;
 
   // Input
-  std::map<std::string, int> keys = {
+  std::map<std::string, int> keys_map_ = {
     {"W", GLFW_KEY_W},
     {"A", GLFW_KEY_A},
     {"S", GLFW_KEY_S},
@@ -41,7 +42,8 @@ class Window : public Module
   };
 
   // Subject
-  Subject subject;
+  Subject subject_;
 };
 
+}
 #endif
