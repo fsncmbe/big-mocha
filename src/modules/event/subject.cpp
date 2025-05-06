@@ -10,9 +10,10 @@ void Subject::notifyObservers(Event* e)
   }
 }
 
-void Subject::addObserver(Observer* o)
+Subject* Subject::addObserver(Observer* o)
 {
   observer_list_.push_back(o);
+  return this;
 }
 
 void Subject::removeObserver(Observer* o)

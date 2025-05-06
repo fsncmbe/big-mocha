@@ -13,7 +13,7 @@ class Subject
  public:
   Subject() {};
   void notifyObservers(Event* e);
-  void addObserver(Observer* o);
+  Subject* addObserver(Observer* o);
   void removeObserver(Observer* o);
   ~Subject() {
     observer_list_.clear();

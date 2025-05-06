@@ -20,13 +20,14 @@ void Log::onNotify(Event* e)
     case Event::Type::kLogError:
       log("\033[1;31mERROR:\033[0m" + e->getMessage());
       break;
+
     case Event::Type::kLogSuccess:
       log("\033[1;31mSUCCESS:\033[0m" + e->getMessage());
       break;
+
     default:
       if (eventTypeToString(e) != "")
         log("\033[1;31m" + eventTypeToString(e) + ":\033[0m" + e->getMessage());
-      break;
   };
 }
 
@@ -42,10 +43,12 @@ std::string Log::eventTypeToString(Event* e)
         return "KEY_UP";
     }
   }
-  if (settings_map_["AssetLoad"])
+
+  if (settings_map_["AssetLoad"] && e->getType() == Event::Type::kAssetLoaded)
   {
     return "ASSET_LOADED";
   }
+
   return "";
 }
 
