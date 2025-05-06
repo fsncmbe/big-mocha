@@ -18,14 +18,11 @@ int main(int argc, const char *argv[])
   // Settings
   glm::vec2 screen_size(500, 500);
 
-  window->getSubject()->addObserver(log);
-  window->getSubject()->addObserver(graphics);
-  window->getSubject()->addObserver(&event_catcher);
+  window->getSubject()->addObserver(log)->addObserver(graphics)->addObserver(&event_catcher);
 
-  graphics->getSubject()->addObserver(log);
-  graphics->getSubject()->addObserver(&event_catcher);
+  graphics->getSubject()->addObserver(log)->addObserver(&event_catcher);
 
-  mocha::Module<mocha::Resource>::inst()->getSubject()->addObserver(log);
+  mocha::Module<mocha::Resource>::inst()->getSubject()->addObserver(log)->addObserver(&event_catcher);
 
   window->init(screen_size);
   graphics->init();
