@@ -47,9 +47,7 @@ int main(int argc, const char *argv[])
     window->swapBuffers();
   }
 
-  delete window;
-  delete log;
-  delete graphics;
+  window->closeWindow();
 
   exit(0);
 }

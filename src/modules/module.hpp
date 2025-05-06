@@ -12,7 +12,7 @@ class Module
     static T instance;
     return &instance;
   }
-
+  
   protected:
   Module() {};
   ~Module() {};

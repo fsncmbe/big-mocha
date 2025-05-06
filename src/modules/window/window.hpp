@@ -33,7 +33,6 @@ class Window
 
   // Subject
   Subject* getSubject();
-  ~Window() {closeWindow();}
 
  private:
   Window() {};

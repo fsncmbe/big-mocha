@@ -44,13 +44,13 @@ class Graphics : public Observer
   // Observer
   void onNotify(Event* e);
 
-  ~Graphics() {delete current_shader_;}
+  ~Graphics() {}
   
  private:
   Graphics() {}
 
   // Shader
-  std::map<std::string, Shader*> shader_map_;
+  std::map<std::string, Shader> shader_map_;
   Shader* current_shader_;
 
   // Subject
