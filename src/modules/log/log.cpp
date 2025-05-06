@@ -40,9 +40,11 @@ std::string Log::eventTypeToString(Event* e)
         return "KEY_DOWN";
       case Event::Type::kKeyUp:
         return "KEY_UP";
-      default:
-        return "";
     }
+  }
+  if (settings_map_["AssetLoad"])
+  {
+    return "ASSET_LOADED";
   }
   return "";
 }

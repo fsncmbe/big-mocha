@@ -24,7 +24,8 @@ class Log : public Observer
  private:
   std::map<std::string, bool> settings_map_ = 
   {
-    {"LogKeys", false}
+    {"LogKeys", false},
+    {"AssetLoad", true}
   };
 
   Log() {};

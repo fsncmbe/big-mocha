@@ -7,6 +7,8 @@ void Resource::load(std::string path)
 {
     if (typeid(T) == typeid(Shader))
       loadShader(path);
+    
+    subject_.notifyObservers(new Event(Event::Type::kAssetLoaded, path));
 }
 
 template <typename T>
@@ -86,7 +88,6 @@ void Resource::loadShader(std::string path)
   glDeleteShader(vertex);
   glDeleteShader(fragment);
 }
-
 
 void Resource::checkShader(unsigned int id, std::string type)
 {

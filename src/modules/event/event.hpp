@@ -16,7 +16,8 @@ class Event
     kKeyUp,
     kLogError,
     kLogSuccess,
-    kWindowSizeChange
+    kWindowSizeChange,
+    kAssetLoaded
   };
 
   Event(Type type, std::string message = "", int num_int = 0, float num_float = 0.0f, glm::vec3 vec3 = {0,0,0}) 
