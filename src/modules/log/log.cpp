@@ -7,6 +7,11 @@ void Log::log(std::string message)
   std::cout << message << "\n"; 
 }
 
+void Log::change_setting(std::string name, bool set)
+{
+  settings_map_[name] = set;
+}
+
 void Log::onNotify(Event* e)
 {
   switch (e->getType())
@@ -27,15 +32,19 @@ void Log::onNotify(Event* e)
 
 std::string Log::eventTypeToString(Event* e)
 {
-  switch(e->getType())
+  if (settings_map_["LogKeys"])
   {
-    case Event::Type::kKeyDown:
-      return "KEY_DOWN";
-    case Event::Type::kKeyUp:
-      return "KEY_UP";
-    default:
-      return "";
+    switch(e->getType())
+    {
+      case Event::Type::kKeyDown:
+        return "KEY_DOWN";
+      case Event::Type::kKeyUp:
+        return "KEY_UP";
+      default:
+        return "";
+    }
   }
+  return "";
 }
 
 }

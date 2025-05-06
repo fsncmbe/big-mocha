@@ -10,7 +10,7 @@ Camera::Camera()
       yaw_(-90.0f), 
       pitch_(0.0f),
       fov_(45.0f),
-      movement_speed_(2.5f), 
+      movement_speed_(5.0f), 
       mouse_sensitivity_(0.1f),
       zoom_(45.0f) {
   updateCameraVectors();

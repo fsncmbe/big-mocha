@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 
 #include "../module.hpp"
 #include "../event/observer.hpp"
@@ -15,11 +16,17 @@ class Log : public Observer
  friend class Module<Log>;
  public:
   void log(std::string message);
+  void change_setting(std::string name, bool set);
 
   // Observer
   void onNotify(Event* e);
 
  private:
+  std::map<std::string, bool> settings_map_ = 
+  {
+    {"LogKeys", false}
+  };
+
   Log() {};
   std::string eventTypeToString(Event* e);
 };

@@ -75,7 +75,28 @@ void Graphics::onNotify(Event* e)
       cam_.processProjectionChange({tvec.x, tvec.y});
       return;
     }
-    default :
+    // ATTENTION: Only Temporary input check for 3d testing
+    case Event::Type::kKeyDown:
+    {
+      switch(e->getInt())
+      {
+        case GLFW_KEY_W:
+          cam_.processKeyboard(Camera::kForward, e->getFloat());
+          return;
+        case GLFW_KEY_S:
+          cam_.processKeyboard(Camera::kBackward, e->getFloat());
+          return;
+        case GLFW_KEY_A:
+          cam_.processKeyboard(Camera::kLeft, e->getFloat());
+          return;
+        case GLFW_KEY_D:
+          cam_.processKeyboard(Camera::kRight, e->getFloat());
+          return;
+        default:
+          return;
+      }
+    }
+    default:
       return;
   }
 }

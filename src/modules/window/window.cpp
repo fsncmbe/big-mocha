@@ -5,7 +5,7 @@ namespace {
 void windowSizeChange(GLFWwindow *window, int width, int height)
 {
   glViewport(0, 0, width, height);
-  mocha::Module<mocha::Window>::inst()->getSubject()->notifyObservers(new mocha::Event(mocha::Event::Type::kWindowSizeChange, "", 0, {width, height, 0}));
+  mocha::Module<mocha::Window>::inst()->getSubject()->notifyObservers(new mocha::Event(mocha::Event::Type::kWindowSizeChange, "", 0, 0.0f, {width, height, 0}));
 }
 
 }
@@ -40,12 +40,25 @@ void Window::init(glm::vec2 window_size)
     closeWindow();
   }
 
+  
+  current_frame_ = glfwGetTime();
+  dt_ = 0;
+  last_frame_ = current_frame_;
+
   subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Window init done"));
 }
 
 bool Window::keepGameLoop()
 {
+  updateDt();
   return !glfwWindowShouldClose(glfw_window_);
+}
+
+void Window::updateDt()
+{
+  current_frame_ = glfwGetTime();
+  dt_ = current_frame_ - last_frame_;
+  last_frame_ = current_frame_;
 }
 
 void Window::clearWindow()
@@ -68,13 +81,13 @@ void Window::closeWindow()
 
 void Window::getInputs()
 {
-  //for (auto &pair : keys_map_)
-  //{
-    //if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_PRESS)
-    //  subject_.notifyObservers(new Event(Event::Type::kKeyDown, pair.first));
+  for (auto &pair : keys_map_)
+  {
+    if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_PRESS)
+      subject_.notifyObservers(new Event(Event::Type::kKeyDown, pair.first, pair.second, dt_));
     //if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_RELEASE)
     //  subject_.notifyObservers(new Event(Event::Type::kKeyUp, pair.first));
-  //}
+  }
 }
 
 Subject* Window::getSubject()

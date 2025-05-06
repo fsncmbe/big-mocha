@@ -48,6 +48,5 @@ int main(int argc, const char *argv[])
   }
 
   window->closeWindow();
-
   exit(0);
 }

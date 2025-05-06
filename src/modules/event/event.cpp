@@ -12,9 +12,14 @@ std::string Event::getMessage()
   return message_;
 }
 
-int Event::getNum()
+int Event::getInt()
 {
-  return num_;
+  return num_int_;
+}
+
+float Event::getFloat()
+{
+  return num_float_;
 }
 
 glm::vec3 Event::getVec3()

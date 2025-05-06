@@ -24,6 +24,7 @@ class Window
  public:
   void init(glm::vec2 window_size);
   bool keepGameLoop();
+  void updateDt();
   void clearWindow();
   void swapBuffers();
   void closeWindow();
@@ -37,6 +38,9 @@ class Window
  private:
   Window() {};
   GLFWwindow* glfw_window_;
+  float dt_;
+  float last_frame_;
+  float current_frame_;
 
   // Input
   std::map<std::string, int> keys_map_ = {
