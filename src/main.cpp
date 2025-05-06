@@ -25,13 +25,14 @@ int main(int argc, const char *argv[])
   graphics->getSubject()->addObserver(log);
   graphics->getSubject()->addObserver(&event_catcher);
 
+  mocha::Module<mocha::Resource>::inst()->getSubject()->addObserver(log);
+
   window->init(screen_size);
   graphics->init();
 
   // Pre render stuff
   mocha::Cube cube({1.0f, 1.0f, 1.0f});
   glm::vec3 trans({5.0f, 0.0f, -20.0f});
-
   // Game loop
   while(window->keepGameLoop())
   {

@@ -12,11 +12,10 @@ void Graphics::init()
   
   for (std::string s : shaders)
   {
-      shader_map_[s] = Shader();
-      shader_map_[s].load((path + s + ".vs").c_str(), (path + s + ".fs").c_str());
+    Module<Resource>::inst()->load<Shader>(path + s);
   }
 
-  current_shader_ = &shader_map_["default"];
+  current_shader_ = Module<Resource>::inst()->get<Shader>(path + "default");
   subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Graphics init done"));
 }
 

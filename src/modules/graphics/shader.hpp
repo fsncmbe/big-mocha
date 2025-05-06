@@ -14,8 +14,7 @@ namespace mocha {
 class Shader
 {
  public:
-  Shader();
-  void load(const char* vertex_path, const char* fragment_path);
+  Shader(int id = 0) : id_(id) {};
   void use();
 
   void setBool(const char* name, bool value);
@@ -28,9 +27,16 @@ class Shader
   void setMat3(const char* name, glm::mat3 value);
   void setMat4(const char* name, glm::mat4 value);
 
- private:
+ protected:
   unsigned int id_;
   void checkCompileErrors(unsigned int shader, std::string type);
+};
+
+class NullShader : public Shader
+{
+ public:
+  NullShader() : Shader(0) {};
+  void use() {};
 };
 
 }

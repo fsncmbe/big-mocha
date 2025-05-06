@@ -12,13 +12,14 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "GLFW/glfw3.h"
 
-#include "../module.hpp"
 #include "gtypes.hpp"
 #include "shader.hpp"
 #include "drawable.hpp"
 #include "body3d.hpp"
-#include "../event/subject.hpp"
 #include "camera.hpp"
+#include "../module.hpp"
+#include "../event/subject.hpp"
+#include "../resource/resource.hpp"
 
 namespace mocha {
 
@@ -50,7 +51,6 @@ class Graphics : public Observer
   Graphics() {}
 
   // Shader
-  std::map<std::string, Shader> shader_map_;
   Shader* current_shader_;
 
   // Subject
