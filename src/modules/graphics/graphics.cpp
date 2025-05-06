@@ -6,10 +6,10 @@ void Graphics::init()
 {
   std::string path = "media/shaders/";
   
-  std::vector<std::string> shaders = {
+  std::string shaders[] = {
       "default"
   };
-
+  
   for (std::string s : shaders)
   {
       shader_map_[s] = new Shader();
@@ -17,7 +17,6 @@ void Graphics::init()
   }
 
   current_shader_ = shader_map_["default"];
-
   subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Graphics init done"));
 }
 

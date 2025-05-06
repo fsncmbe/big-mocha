@@ -15,7 +15,9 @@ class Subject
   void notifyObservers(Event* e);
   void addObserver(Observer* o);
   void removeObserver(Observer* o);
-
+  ~Subject() {
+    observer_list_.clear();
+  };
  private:
   std::vector<Observer*> observer_list_;
 };

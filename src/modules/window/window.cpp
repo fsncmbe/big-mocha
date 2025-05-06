@@ -10,21 +10,24 @@ void windowSizeChange(GLFWwindow *window, int width, int height)
 
 }
 
-
 namespace mocha {
 
 void Window::init(glm::vec2 window_size)
 {
-  glfwInit();
+  if (!glfwInit())
+  {
+    subject_.notifyObservers(new Event(Event::Type::kLogError, "Failed to init glfw"));
+    glfwTerminate();
+  }
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   glfw_window_ = glfwCreateWindow(window_size.x, window_size.y, "Game", NULL, NULL);
 
-  if (glfw_window_ == NULL)
+  if (!glfw_window_)
   {
-    std::cout << "Failed to create glfw window" << "\n";
+    subject_.notifyObservers(new Event(Event::Type::kLogError, "Failed to create glfw window"));
     glfwTerminate();
   }
 
@@ -33,7 +36,8 @@ void Window::init(glm::vec2 window_size)
   
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
   {
-    std::cout << "Failed to initialize GLAD" << "\n";
+    subject_.notifyObservers(new Event(Event::Type::kLogError, "Failed to init glad"));
+    closeWindow();
   }
 
   subject_.notifyObservers(new Event(Event::Type::kLogSuccess, "Window init done"));
@@ -58,18 +62,19 @@ void Window::swapBuffers()
 
 void Window::closeWindow()
 {
+  glfwDestroyWindow(glfw_window_);
   glfwTerminate();
 }
 
 void Window::getInputs()
 {
-  for (auto &pair : keys_map_)
-  {
+  //for (auto &pair : keys_map_)
+  //{
     //if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_PRESS)
     //  subject_.notifyObservers(new Event(Event::Type::kKeyDown, pair.first));
     //if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_RELEASE)
     //  subject_.notifyObservers(new Event(Event::Type::kKeyUp, pair.first));
-  }
+  //}
 }
 
 Subject* Window::getSubject()

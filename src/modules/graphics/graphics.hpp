@@ -44,8 +44,10 @@ class Graphics : public Observer
   // Observer
   void onNotify(Event* e);
 
+  ~Graphics() {delete current_shader_;}
+  
  private:
-  Graphics() {};
+  Graphics() {}
 
   // Shader
   std::map<std::string, Shader*> shader_map_;

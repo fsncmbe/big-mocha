@@ -1,5 +1,5 @@
 TARGET_EXEC = main.exe
-MIN_TARGET_EXEC = minmain.exe
+DEBUG_EXEC = main_debug.exe
 
 SDIR := src
 MDIR := $(SDIR)/modules
@@ -22,6 +22,9 @@ DIRS := $(sort $(dir $(OBJS)))
 
 CXX := g++
 
+DCXX := $(CXX) -g -O1
+DRUN := valgrind --leak-check=yes
+
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
@@ -37,6 +40,10 @@ all: prep_dir $(BDIR)/$(TARGET_EXEC)
 $(BDIR)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) -o $@ $^ $(LIBS)
 
+# Get .o -> .exe
+$(BDIR)/$(DEBUG_EXEC): $(OBJS)
+	$(DCXX) -o $@ $^ $(LIBS)
+
 # Get .cpp -> .o
 $(BDIR)/%.o: $(SDIR)/%.cpp
 	$(CXX) -I$(IDIR) -c $< -o $@
@@ -45,6 +52,12 @@ $(BDIR)/%.o: $(SDIR)/%.cpp
 $(BDIR)/%.o: $(SDIR)/%.c
 	$(CXX) -I$(IDIR) -c $< -o $@
 
+.PHONY: debug
+debug: prep_dir $(BDIR)/$(DEBUG_EXEC)
+
+.PHONY: debugrun
+debugrun: debug
+	$(DRUN) $(BDIR)/$(DEBUG_EXEC)
 
 # Clean call
 .PHONY: clean

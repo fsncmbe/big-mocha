@@ -33,7 +33,8 @@ class Window
 
   // Subject
   Subject* getSubject();
-    
+  ~Window() {closeWindow();}
+
  private:
   Window() {};
   GLFWwindow* glfw_window_;

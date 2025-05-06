@@ -14,12 +14,16 @@ int main(int argc, const char *argv[])
   mocha::Window* window = mocha::Module<mocha::Window>::inst();
   mocha::Graphics* graphics = mocha::Module<mocha::Graphics>::inst();
 
+  mocha::EventCatcher event_catcher;
   // Settings
   glm::vec2 screen_size(500, 500);
 
   window->getSubject()->addObserver(log);
   window->getSubject()->addObserver(graphics);
+  window->getSubject()->addObserver(&event_catcher);
+
   graphics->getSubject()->addObserver(log);
+  graphics->getSubject()->addObserver(&event_catcher);
 
   window->init(screen_size);
   graphics->init();
@@ -43,6 +47,9 @@ int main(int argc, const char *argv[])
     window->swapBuffers();
   }
 
-  window->closeWindow();
-  return 0;
+  delete window;
+  delete log;
+  delete graphics;
+
+  exit(0);
 }
