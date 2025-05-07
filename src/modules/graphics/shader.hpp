@@ -29,14 +29,6 @@ class Shader
 
  protected:
   unsigned int id_;
-  void checkCompileErrors(unsigned int shader, std::string type);
-};
-
-class NullShader : public Shader
-{
- public:
-  NullShader() : Shader(0) {};
-  void use() {};
 };
 
 }

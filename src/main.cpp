@@ -15,30 +15,31 @@ int main(int argc, const char *argv[])
   mocha::Graphics* graphics = mocha::Module<mocha::Graphics>::inst();
 
   mocha::EventCatcher event_catcher;
+
   // Settings
   glm::vec2 screen_size(500, 500);
 
   window->getSubject()->addObserver(log)->addObserver(graphics)->addObserver(&event_catcher);
-
   graphics->getSubject()->addObserver(log)->addObserver(&event_catcher);
-
   mocha::Module<mocha::Resource>::inst()->getSubject()->addObserver(log)->addObserver(&event_catcher);
 
+  // Init
   window->init(screen_size);
   graphics->init();
 
   // Pre render stuff
   mocha::Cube cube({1.0f, 1.0f, 1.0f});
   glm::vec3 trans({5.0f, 0.0f, -20.0f});
+
   // Game loop
   while(window->keepGameLoop())
   {
     // Game updates here
-    window->clearWindow();
+    
 
     // Render
+    window->clearWindow();
     graphics->readyRender();
-    graphics->getCamera()->update();
 
     graphics->draw(&cube, trans);
 

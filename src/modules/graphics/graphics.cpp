@@ -23,6 +23,9 @@ void Graphics::readyRender()
 {
   if (Module<Input>::inst()->getKey(GLFW_KEY_F) == Input::KeyState::kPressed)
     Module<Resource>::inst()->load<Shader>("media/shaders/default");
+
+  cam_.update();
+
   useShader();
   getShader()->setMat4("projection", cam_.getProjectionMatrix());
   getShader()->setMat4("view", cam_.getViewMatrix());
