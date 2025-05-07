@@ -34,11 +34,11 @@ int main(int argc, const char *argv[])
   while(window->keepGameLoop())
   {
     // Game updates here
-    window->getInputs();
     window->clearWindow();
 
     // Render
     graphics->readyRender();
+    graphics->getCamera()->update();
 
     graphics->draw(&cube, trans);
 

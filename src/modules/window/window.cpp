@@ -40,7 +40,9 @@ void Window::init(glm::vec2 window_size)
     closeWindow();
   }
 
-  
+  glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+  cursor_captured_ = true;
+
   current_frame_ = glfwGetTime();
   dt_ = 0;
   last_frame_ = current_frame_;
@@ -79,14 +81,15 @@ void Window::closeWindow()
   glfwTerminate();
 }
 
-void Window::getInputs()
+void Window::changeCursorCapture()
 {
-  for (auto &pair : keys_map_)
+  if (cursor_captured_)
   {
-    if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_PRESS)
-      subject_.notifyObservers(new Event(Event::Type::kKeyDown, pair.first, pair.second, dt_));
-    //if (glfwGetKey(Module<Window>::inst()->glfw_window_, pair.second) == GLFW_RELEASE)
-    //  subject_.notifyObservers(new Event(Event::Type::kKeyUp, pair.first));
+    glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_CAPTURED);
+    cursor_captured_ = false;
+  } else {
+    glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    cursor_captured_ = true;
   }
 }
 

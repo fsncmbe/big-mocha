@@ -28,9 +28,10 @@ class Window
   void clearWindow();
   void swapBuffers();
   void closeWindow();
-
-  // Input
-  void getInputs();
+  void changeCursorCapture();
+  bool getCursorCapture() {return cursor_captured_;}
+  float getDt() {return dt_;}
+  GLFWwindow* getGlfwWindow() {return glfw_window_;}
 
   // Subject
   Subject* getSubject();
@@ -41,14 +42,7 @@ class Window
   float dt_;
   float last_frame_;
   float current_frame_;
-
-  // Input
-  std::map<std::string, int> keys_map_ = {
-    {"W", GLFW_KEY_W},
-    {"A", GLFW_KEY_A},
-    {"S", GLFW_KEY_S},
-    {"D", GLFW_KEY_D}
-  };
+  bool cursor_captured_;
 
   // Subject
   Subject subject_;

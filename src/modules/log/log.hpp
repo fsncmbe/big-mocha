@@ -15,17 +15,22 @@ class Log : public Observer
 {
  friend class Module<Log>;
  public:
+  enum class Setting {
+    kLogKeys,
+    kAssetLoad
+  };
+
   void log(std::string message);
-  void change_setting(std::string name, bool set);
+  void change_setting(Setting name, bool set);
 
   // Observer
   void onNotify(Event* e);
 
  private:
-  std::map<std::string, bool> settings_map_ = 
+  std::map<Setting, bool> settings_map_ = 
   {
-    {"LogKeys", false},
-    {"AssetLoad", true}
+    {Setting::kLogKeys, false},
+    {Setting::kAssetLoad, true}
   };
 
   Log() {};

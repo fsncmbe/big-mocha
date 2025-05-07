@@ -7,7 +7,7 @@ void Log::log(std::string message)
   std::cout << message << "\n"; 
 }
 
-void Log::change_setting(std::string name, bool set)
+void Log::change_setting(Setting name, bool set)
 {
   settings_map_[name] = set;
 }
@@ -33,7 +33,7 @@ void Log::onNotify(Event* e)
 
 std::string Log::eventTypeToString(Event* e)
 {
-  if (settings_map_["LogKeys"])
+  if (settings_map_[Setting::kLogKeys])
   {
     switch(e->getType())
     {
@@ -44,7 +44,7 @@ std::string Log::eventTypeToString(Event* e)
     }
   }
 
-  if (settings_map_["AssetLoad"] && e->getType() == Event::Type::kAssetLoaded)
+  if (settings_map_[Setting::kAssetLoad] && e->getType() == Event::Type::kAssetLoaded)
   {
     return "ASSET_LOADED";
   }

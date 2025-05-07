@@ -1,5 +1,7 @@
 #include "entity.hpp"
 
+
+
 Entity *Entity::get(std::string uuid)
 {   
   try 
