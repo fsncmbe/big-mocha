@@ -7,11 +7,14 @@
 #include <fstream>
 #include <sstream>
 
+#include "stb/stb_image.h"
+
 #include "../module.hpp"
 #include "../graphics/shader.hpp"
 #include "../graphics/body3d.hpp"
 #include "../event/subject.hpp"
 #include "../graphics/font.hpp"
+#include "../graphics/gtypes.hpp"
 
 namespace mocha {
 
@@ -46,6 +49,9 @@ class Resource
   std::map<std::string, Font> font_map_;
   void loadFont(std::string path);
   void checkFont(Font* font);
+
+  std::map<std::string, Texture> texture_map_;
+  void loadTexture(std::string path);
 
   // Subject
   Subject subject_;

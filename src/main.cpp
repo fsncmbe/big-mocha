@@ -13,6 +13,7 @@ int main(int argc, const char *argv[])
   mocha::Log* log = mocha::Module<mocha::Log>::inst();
   mocha::Window* window = mocha::Module<mocha::Window>::inst();
   mocha::Graphics* graphics = mocha::Module<mocha::Graphics>::inst();
+  mocha::Resource* resource = mocha::Module<mocha::Resource>::inst();
 
   mocha::EventCatcher event_catcher;
 
@@ -21,7 +22,7 @@ int main(int argc, const char *argv[])
 
   window->getSubject()->addObserver(log)->addObserver(graphics)->addObserver(&event_catcher);
   graphics->getSubject()->addObserver(log)->addObserver(&event_catcher);
-  mocha::Module<mocha::Resource>::inst()->getSubject()->addObserver(log)->addObserver(&event_catcher);
+  resource->getSubject()->addObserver(log)->addObserver(&event_catcher);
 
   // Init
   window->init(screen_size);
@@ -33,6 +34,8 @@ int main(int argc, const char *argv[])
     {mocha::Cube({1.0f, 1.0f, 1.0f}), {-2, 0, 0}},
   };
 
+  resource->load<mocha::Texture>("media/textures/default.png");
+
   // Game loop
   while(window->keepGameLoop())
   {
@@ -41,6 +44,8 @@ int main(int argc, const char *argv[])
     window->clearWindow();
     graphics->readyRender();
 
+    //graphics->getShader()->setInt("texture", resource->get<mocha::Texture>("media/textures/default.png")->id);
+    graphics->getShader()->setInt("texture", 0);
     for (auto p : cubes)
     {
       graphics->draw(&p.first, p.second);

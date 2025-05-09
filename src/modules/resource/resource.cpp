@@ -9,22 +9,28 @@ void Resource::load(std::string path)
       loadShader(path);
     if (typeid(T) == typeid(Model))
       loadModel(path);
-    
+    if (typeid(T) == typeid(Texture))
+      loadTexture(path);
     subject_.notifyObservers(new Event(Event::Type::kAssetLoaded, path));
 }
 
 template <typename T>
 T* Resource::get(std::string path)
 {
-  if(typeid(T) == typeid(Shader))
+  if (typeid(T) == typeid(Shader))
   {
     if (shader_map_.count(path))
-      return &shader_map_[path];
+      return &(shader_map_[path]);
   }
-  if(typeid(T) == typeid(Model))
+  if (typeid(T) == typeid(Model))
   {
     if (model_map_.count(path))
-      return &model_map_[path];
+      return &(model_map_[path]);
+  }
+  if (typeid(T) == typeid(Texture))
+  {
+    if (texture_map_.count(path))
+      return &(texture_map_[path]);
   }
   return NULL;
 }
@@ -41,6 +47,11 @@ void Resource::del(std::string path)
   {
     if (model_map_.count(path))
       model_map_.erase(path);
+  }
+  if (typeid(T) == typeid(Texture))
+  {
+    if (texture_map_.count(path))
+      texture_map_.erase(path);
   }
 }
 
@@ -135,6 +146,34 @@ void Resource::loadFont(std::string path)
 
 }
 
+void Resource::loadTexture(std::string path)
+{
+  unsigned int texture;
+
+  glGenTextures(1, &texture);
+  glBindTexture(GL_TEXTURE_2D, texture);
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+  int width, height, nr_channels;
+  stbi_set_flip_vertically_on_load(true);
+
+  unsigned char* data = stbi_load(path.c_str(), &width, &height, &nr_channels, 0);
+  if (data)
+  {
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_INT, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+  } else 
+  {
+    subject_.notifyObservers(new Event(Event::Type::kLogError, "Failed to load: " + path));
+  }
+  stbi_image_free(data);
+
+  texture_map_[path] = {texture};
+}
 
 template void Resource::load<Shader>(std::string path);
 template Shader* Resource::get<Shader>(std::string path);
@@ -144,5 +183,8 @@ template Model* Resource::get<Model>(std::string path);
 
 template void Resource::load<Font>(std::string path);
 template Font* Resource::get<Font>(std::string path);
+
+template void Resource::load<Texture>(std::string path);
+template Texture* Resource::get<Texture>(std::string path);
 
 }

@@ -16,5 +16,10 @@ struct Vertex
   glm::vec2 tex_coords;
 };
 
+struct Texture
+{
+  unsigned int id;
+};
+
 }
 #endif
