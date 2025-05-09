@@ -43,6 +43,8 @@ void Window::init(glm::vec2 window_size)
   glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
   cursor_captured_ = true;
 
+  glEnable(GL_DEPTH_TEST);
+
   current_frame_ = glfwGetTime();
   dt_ = 0;
   last_frame_ = current_frame_;
@@ -66,7 +68,7 @@ void Window::updateDt()
 void Window::clearWindow()
 {
   glClearColor(0.5f, 0.5f, 1.0f, 1.0f);
-  glClear(GL_COLOR_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Window::swapBuffers()

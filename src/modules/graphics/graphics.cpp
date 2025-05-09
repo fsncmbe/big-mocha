@@ -29,6 +29,10 @@ void Graphics::readyRender()
   useShader();
   getShader()->setMat4("projection", cam_.getProjectionMatrix());
   getShader()->setMat4("view", cam_.getViewMatrix());
+  getShader()->setVec3("object_color", {1.0f, 0.5f, 0.31f});
+  getShader()->setVec3("light_color", {1.0f, 1.0f, 1.0f});
+  getShader()->setVec3("light_pos", {1.0f, 1.0f, 1.0f});
+  getShader()->setVec3("view_pos", cam_.getPosition());
 }
 
 void Graphics::draw(Drawable *drawable, glm::mat4 trans)

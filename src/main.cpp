@@ -28,20 +28,23 @@ int main(int argc, const char *argv[])
   graphics->init();
 
   // Pre render stuff
-  mocha::Cube cube({1.0f, 1.0f, 1.0f});
-  glm::vec3 trans({5.0f, 0.0f, -20.0f});
+  std::pair<mocha::Cube, glm::vec3> cubes[]= {
+    {mocha::Cube({1.0f, 1.0f, 1.0f}), {0, 0, -8}},
+    {mocha::Cube({1.0f, 1.0f, 1.0f}), {-2, 0, 0}},
+  };
 
   // Game loop
   while(window->keepGameLoop())
   {
-    // Game updates here
-    
 
     // Render
     window->clearWindow();
     graphics->readyRender();
 
-    graphics->draw(&cube, trans);
+    for (auto p : cubes)
+    {
+      graphics->draw(&p.first, p.second);
+    }
 
     window->swapBuffers();
   }

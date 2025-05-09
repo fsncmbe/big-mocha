@@ -18,7 +18,7 @@ class Camera
   glm::mat4   getViewMatrix();
   glm::mat4   getProjectionMatrix();
   void        processProjectionChange(glm::vec2 window_size);
-
+  glm::vec3   getPosition() {return position_;}
   void        update();
  private:
   void        updateCameraVectors();

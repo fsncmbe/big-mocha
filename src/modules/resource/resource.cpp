@@ -7,6 +7,8 @@ void Resource::load(std::string path)
 {
     if (typeid(T) == typeid(Shader))
       loadShader(path);
+    if (typeid(T) == typeid(Model))
+      loadModel(path);
     
     subject_.notifyObservers(new Event(Event::Type::kAssetLoaded, path));
 }
@@ -19,6 +21,11 @@ T* Resource::get(std::string path)
     if (shader_map_.count(path))
       return &shader_map_[path];
   }
+  if(typeid(T) == typeid(Model))
+  {
+    if (model_map_.count(path))
+      return &model_map_[path];
+  }
   return NULL;
 }
 
@@ -29,6 +36,11 @@ void Resource::del(std::string path)
   {
     if (shader_map_.count(path))
       shader_map_.erase(path);
+  }
+  if (typeid(T) == typeid(Model))
+  {
+    if (model_map_.count(path))
+      model_map_.erase(path);
   }
 }
 
@@ -113,6 +125,24 @@ void Resource::checkShader(unsigned int id, std::string type)
   }
 }
 
-template Shader* Resource::get<Shader>(std::string path);
+void Resource::loadModel(std::string path)
+{
+  
+}
+
+void Resource::loadFont(std::string path)
+{
+
+}
+
+
 template void Resource::load<Shader>(std::string path);
+template Shader* Resource::get<Shader>(std::string path);
+
+template void Resource::load<Model>(std::string path);
+template Model* Resource::get<Model>(std::string path);
+
+template void Resource::load<Font>(std::string path);
+template Font* Resource::get<Font>(std::string path);
+
 }

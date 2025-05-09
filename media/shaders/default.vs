@@ -1,5 +1,9 @@
 #version 330 core
-layout (location = 0) in vec3 aPos;
+layout (location = 0) in vec3 position_;
+layout (location = 1) in vec3 normal_;
+
+out vec3 frag_pos;
+out vec3 normal;
 
 uniform mat4 trans;
 uniform mat4 view;
@@ -7,5 +11,8 @@ uniform mat4 projection;
 
 void main()
 {
-    gl_Position = projection * view * trans * vec4(aPos, 1.0f);
+    frag_pos = vec3(trans * vec4(position_, 1.0));
+    normal = mat3(transpose(inverse(trans))) * normal_;
+
+    gl_Position = projection * view * vec4(frag_pos, 1.0f);
 }
