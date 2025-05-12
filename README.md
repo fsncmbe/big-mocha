@@ -1,9 +1,6 @@
-C++ OpenGl Game Framework
+C++ OpenGl 3D Game Framework
 
-Requirements:
-Msys2 https://www.msys2.org/#installation
-pacman -S mingw-w64-ucrt-x86_64-gcc make
+Still early in development, used as a means to learn c++ and opengl for me.
 
-Add to Path for gcc call and make call
-C:\msys64\ucrt64\bin
-C:\msys64\usr\bin
+build by calling make 
+build and run by calling make run
