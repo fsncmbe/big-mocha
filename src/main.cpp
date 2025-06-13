@@ -34,7 +34,7 @@ int main(int argc, const char *argv[])
     {mocha::Cube({1.0f, 1.0f, 1.0f}), {-2, 0, 0}},
   };
 
-  resource->load<mocha::Texture>("media/textures/default.png");
+  //resource->load<mocha::Texture>("media/textures/default.png");
 
   // Game loop
   while(window->keepGameLoop())
@@ -45,7 +45,7 @@ int main(int argc, const char *argv[])
     graphics->readyRender();
 
     //graphics->getShader()->setInt("texture", resource->get<mocha::Texture>("media/textures/default.png")->id);
-    graphics->getShader()->setInt("texture", 0);
+    //graphics->getShader()->setInt("texture", 0);
     for (auto p : cubes)
     {
       graphics->draw(&p.first, p.second);
