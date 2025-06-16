@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/engine.dir/link.d CMakeFiles/engine.dir/main.cpp.o -o engine  helper/libmocha_helper.a graphics/libmocha_graphics.a window/libmocha_window.a /usr/lib/libglfw.so.3.4 -lGL /usr/lib/libglfw.so.3.4

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmocha_graphics.a CMakeFiles/mocha_graphics.dir/glad.cpp.o CMakeFiles/mocha_graphics.dir/stb.cpp.o CMakeFiles/mocha_graphics.dir/render.cpp.o CMakeFiles/mocha_graphics.dir/camera.cpp.o CMakeFiles/mocha_graphics.dir/drawables.cpp.o
-/usr/bin/ranlib libmocha_graphics.a
