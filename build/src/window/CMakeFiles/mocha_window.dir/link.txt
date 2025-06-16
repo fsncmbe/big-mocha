@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmocha_window.a CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o CMakeFiles/mocha_window.dir/window.cpp.o
+/usr/bin/ranlib libmocha_window.a

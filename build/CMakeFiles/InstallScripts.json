@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/cmbe/GitHub/CMake Test/build/cmake_install.cmake",
+		"/home/cmbe/GitHub/CMake Test/build/src/helper/cmake_install.cmake",
+		"/home/cmbe/GitHub/CMake Test/build/src/graphics/cmake_install.cmake",
+		"/home/cmbe/GitHub/CMake Test/build/src/window/cmake_install.cmake",
+		"/home/cmbe/GitHub/CMake Test/build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

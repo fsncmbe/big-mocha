@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmocha_helper.a CMakeFiles/mocha_helper.dir/log.cpp.o CMakeFiles/mocha_helper.dir/resource.cpp.o
+/usr/bin/ranlib libmocha_helper.a
