@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cmbe/GitHub/CMake Test/src/helper/log.cpp" "src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o" "gcc" "src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o.d"
-  "/home/cmbe/GitHub/CMake Test/src/helper/resource.cpp" "src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o" "gcc" "src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o.d"
+  "/home/cmbe/GitHub/big-mocha/src/helper/log.cpp" "src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o" "gcc" "src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o.d"
+  "/home/cmbe/GitHub/big-mocha/src/helper/resource.cpp" "src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o" "gcc" "src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,7 +1,7 @@
 src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: \
- /home/cmbe/GitHub/CMake\ Test/src/helper/resource.cpp \
+ /home/cmbe/GitHub/big-mocha/src/helper/resource.cpp \
  /usr/include/stdc-predef.h \
- /home/cmbe/GitHub/CMake\ Test/src/helper/../../include/mocha/helper/resource.hpp \
+ /home/cmbe/GitHub/big-mocha/src/helper/../../include/mocha/helper/resource.hpp \
  /usr/include/c++/15.1.1/iostream \
  /usr/include/c++/15.1.1/bits/requires_hosted.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -170,6 +170,6 @@ src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: \
  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/c++/15.1.1/pstl/execution_defs.h \
  /usr/include/c++/15.1.1/typeindex \
- /home/cmbe/GitHub/CMake\ Test/src/helper/../../include/mocha/helper/log.hpp \
+ /home/cmbe/GitHub/big-mocha/src/helper/../../include/mocha/helper/log.hpp \
  /usr/include/c++/15.1.1/ctime /usr/include/c++/15.1.1/sstream \
  /usr/include/c++/15.1.1/bits/sstream.tcc

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cmbe/GitHub/CMake Test"
+CMAKE_SOURCE_DIR = /home/cmbe/GitHub/big-mocha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cmbe/GitHub/CMake Test/build"
+CMAKE_BINARY_DIR = /home/cmbe/GitHub/big-mocha/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,21 +87,21 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" "/home/cmbe/GitHub/CMake Test/build/src/window//CMakeFiles/progress.marks"
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles /home/cmbe/GitHub/big-mocha/build/src/window//CMakeFiles/progress.marks
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" "/home/cmbe/GitHub/CMake Test/build/src/window//CMakeFiles/progress.marks"
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles /home/cmbe/GitHub/big-mocha/build/src/window//CMakeFiles/progress.marks
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/codegen
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
 clean:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/clean
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/clean
 .PHONY : clean
 
 # The main clean target
@@ -110,22 +110,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/preinstall
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/preinstall
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/window/CMakeFiles/mocha_window.dir/rule:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/CMakeFiles/mocha_window.dir/rule
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/window/CMakeFiles/mocha_window.dir/rule
 .PHONY : src/window/CMakeFiles/mocha_window.dir/rule
 
 # Convenience name for target.
@@ -134,7 +134,7 @@ mocha_window: src/window/CMakeFiles/mocha_window.dir/rule
 
 # fast build rule for target.
 mocha_window/fast:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/build
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/build
 .PHONY : mocha_window/fast
 
 __/graphics/glad.o: __/graphics/glad.cpp.o
@@ -142,7 +142,7 @@ __/graphics/glad.o: __/graphics/glad.cpp.o
 
 # target to build an object file
 __/graphics/glad.cpp.o:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o
 .PHONY : __/graphics/glad.cpp.o
 
 __/graphics/glad.i: __/graphics/glad.cpp.i
@@ -150,7 +150,7 @@ __/graphics/glad.i: __/graphics/glad.cpp.i
 
 # target to preprocess a source file
 __/graphics/glad.cpp.i:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i
 .PHONY : __/graphics/glad.cpp.i
 
 __/graphics/glad.s: __/graphics/glad.cpp.s
@@ -158,7 +158,7 @@ __/graphics/glad.s: __/graphics/glad.cpp.s
 
 # target to generate assembly for a file
 __/graphics/glad.cpp.s:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s
 .PHONY : __/graphics/glad.cpp.s
 
 window.o: window.cpp.o
@@ -166,7 +166,7 @@ window.o: window.cpp.o
 
 # target to build an object file
 window.cpp.o:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.o
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.o
 .PHONY : window.cpp.o
 
 window.i: window.cpp.i
@@ -174,7 +174,7 @@ window.i: window.cpp.i
 
 # target to preprocess a source file
 window.cpp.i:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.i
 .PHONY : window.cpp.i
 
 window.s: window.cpp.s
@@ -182,7 +182,7 @@ window.s: window.cpp.s
 
 # target to generate assembly for a file
 window.cpp.s:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/window/CMakeFiles/mocha_window.dir/build.make src/window/CMakeFiles/mocha_window.dir/window.cpp.s
 .PHONY : window.cpp.s
 
 # Help Target
@@ -212,6 +212,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

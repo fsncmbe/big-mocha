@@ -1,4 +1,4 @@
-# Install script for directory: /home/cmbe/GitHub/CMake Test/src
+# Install script for directory: /home/cmbe/GitHub/big-mocha/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,6 +45,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/cmbe/GitHub/CMake Test/build/src/install_local_manifest.txt"
+  file(WRITE "/home/cmbe/GitHub/big-mocha/build/src/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

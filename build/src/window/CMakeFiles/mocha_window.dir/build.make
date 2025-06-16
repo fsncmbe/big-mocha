@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cmbe/GitHub/CMake Test"
+CMAKE_SOURCE_DIR = /home/cmbe/GitHub/big-mocha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cmbe/GitHub/CMake Test/build"
+CMAKE_BINARY_DIR = /home/cmbe/GitHub/big-mocha/build
 
 # Include any dependencies generated for this target.
 include src/window/CMakeFiles/mocha_window.dir/depend.make
@@ -73,32 +73,32 @@ src/window/CMakeFiles/mocha_window.dir/codegen:
 .PHONY : src/window/CMakeFiles/mocha_window.dir/codegen
 
 src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o: src/window/CMakeFiles/mocha_window.dir/flags.make
-src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/glad.cpp
+src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp
 src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o: src/window/CMakeFiles/mocha_window.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o -MF CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o.d -o CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o -MF CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o.d -o CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp
 
 src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp" > CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp > CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.i
 
 src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp" -o CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp -o CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.s
 
 src/window/CMakeFiles/mocha_window.dir/window.cpp.o: src/window/CMakeFiles/mocha_window.dir/flags.make
-src/window/CMakeFiles/mocha_window.dir/window.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/window/window.cpp
+src/window/CMakeFiles/mocha_window.dir/window.cpp.o: /home/cmbe/GitHub/big-mocha/src/window/window.cpp
 src/window/CMakeFiles/mocha_window.dir/window.cpp.o: src/window/CMakeFiles/mocha_window.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/window/CMakeFiles/mocha_window.dir/window.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/window/CMakeFiles/mocha_window.dir/window.cpp.o -MF CMakeFiles/mocha_window.dir/window.cpp.o.d -o CMakeFiles/mocha_window.dir/window.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/window/window.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/window/CMakeFiles/mocha_window.dir/window.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/window/CMakeFiles/mocha_window.dir/window.cpp.o -MF CMakeFiles/mocha_window.dir/window.cpp.o.d -o CMakeFiles/mocha_window.dir/window.cpp.o -c /home/cmbe/GitHub/big-mocha/src/window/window.cpp
 
 src/window/CMakeFiles/mocha_window.dir/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_window.dir/window.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/window/window.cpp" > CMakeFiles/mocha_window.dir/window.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/window/window.cpp > CMakeFiles/mocha_window.dir/window.cpp.i
 
 src/window/CMakeFiles/mocha_window.dir/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_window.dir/window.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/window/window.cpp" -o CMakeFiles/mocha_window.dir/window.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/window/window.cpp -o CMakeFiles/mocha_window.dir/window.cpp.s
 
 # Object files for target mocha_window
 mocha_window_OBJECTS = \
@@ -112,19 +112,19 @@ src/window/libmocha_window.a: src/window/CMakeFiles/mocha_window.dir/__/graphics
 src/window/libmocha_window.a: src/window/CMakeFiles/mocha_window.dir/window.cpp.o
 src/window/libmocha_window.a: src/window/CMakeFiles/mocha_window.dir/build.make
 src/window/libmocha_window.a: src/window/CMakeFiles/mocha_window.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmocha_window.a"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_window.dir/cmake_clean_target.cmake
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_window.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmocha_window.a"
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && $(CMAKE_COMMAND) -P CMakeFiles/mocha_window.dir/cmake_clean_target.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_window.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/window/CMakeFiles/mocha_window.dir/build: src/window/libmocha_window.a
 .PHONY : src/window/CMakeFiles/mocha_window.dir/build
 
 src/window/CMakeFiles/mocha_window.dir/clean:
-	cd "/home/cmbe/GitHub/CMake Test/build/src/window" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_window.dir/cmake_clean.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/window && $(CMAKE_COMMAND) -P CMakeFiles/mocha_window.dir/cmake_clean.cmake
 .PHONY : src/window/CMakeFiles/mocha_window.dir/clean
 
 src/window/CMakeFiles/mocha_window.dir/depend:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/cmbe/GitHub/CMake Test" "/home/cmbe/GitHub/CMake Test/src/window" "/home/cmbe/GitHub/CMake Test/build" "/home/cmbe/GitHub/CMake Test/build/src/window" "/home/cmbe/GitHub/CMake Test/build/src/window/CMakeFiles/mocha_window.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cmbe/GitHub/big-mocha /home/cmbe/GitHub/big-mocha/src/window /home/cmbe/GitHub/big-mocha/build /home/cmbe/GitHub/big-mocha/build/src/window /home/cmbe/GitHub/big-mocha/build/src/window/CMakeFiles/mocha_window.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : src/window/CMakeFiles/mocha_window.dir/depend
 

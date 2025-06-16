@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cmbe/GitHub/CMake Test"
+CMAKE_SOURCE_DIR = /home/cmbe/GitHub/big-mocha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cmbe/GitHub/CMake Test/build"
+CMAKE_BINARY_DIR = /home/cmbe/GitHub/big-mocha/build
 
 # Include any dependencies generated for this target.
 include src/helper/CMakeFiles/mocha_helper.dir/depend.make
@@ -73,32 +73,32 @@ src/helper/CMakeFiles/mocha_helper.dir/codegen:
 .PHONY : src/helper/CMakeFiles/mocha_helper.dir/codegen
 
 src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o: src/helper/CMakeFiles/mocha_helper.dir/flags.make
-src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/helper/log.cpp
+src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o: /home/cmbe/GitHub/big-mocha/src/helper/log.cpp
 src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o: src/helper/CMakeFiles/mocha_helper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o -MF CMakeFiles/mocha_helper.dir/log.cpp.o.d -o CMakeFiles/mocha_helper.dir/log.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/helper/log.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o -MF CMakeFiles/mocha_helper.dir/log.cpp.o.d -o CMakeFiles/mocha_helper.dir/log.cpp.o -c /home/cmbe/GitHub/big-mocha/src/helper/log.cpp
 
 src/helper/CMakeFiles/mocha_helper.dir/log.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_helper.dir/log.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/helper/log.cpp" > CMakeFiles/mocha_helper.dir/log.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/helper/log.cpp > CMakeFiles/mocha_helper.dir/log.cpp.i
 
 src/helper/CMakeFiles/mocha_helper.dir/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_helper.dir/log.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/helper/log.cpp" -o CMakeFiles/mocha_helper.dir/log.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/helper/log.cpp -o CMakeFiles/mocha_helper.dir/log.cpp.s
 
 src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: src/helper/CMakeFiles/mocha_helper.dir/flags.make
-src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/helper/resource.cpp
+src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: /home/cmbe/GitHub/big-mocha/src/helper/resource.cpp
 src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o: src/helper/CMakeFiles/mocha_helper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o -MF CMakeFiles/mocha_helper.dir/resource.cpp.o.d -o CMakeFiles/mocha_helper.dir/resource.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/helper/resource.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o -MF CMakeFiles/mocha_helper.dir/resource.cpp.o.d -o CMakeFiles/mocha_helper.dir/resource.cpp.o -c /home/cmbe/GitHub/big-mocha/src/helper/resource.cpp
 
 src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_helper.dir/resource.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/helper/resource.cpp" > CMakeFiles/mocha_helper.dir/resource.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/helper/resource.cpp > CMakeFiles/mocha_helper.dir/resource.cpp.i
 
 src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_helper.dir/resource.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/helper/resource.cpp" -o CMakeFiles/mocha_helper.dir/resource.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/helper/resource.cpp -o CMakeFiles/mocha_helper.dir/resource.cpp.s
 
 # Object files for target mocha_helper
 mocha_helper_OBJECTS = \
@@ -112,19 +112,19 @@ src/helper/libmocha_helper.a: src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o
 src/helper/libmocha_helper.a: src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o
 src/helper/libmocha_helper.a: src/helper/CMakeFiles/mocha_helper.dir/build.make
 src/helper/libmocha_helper.a: src/helper/CMakeFiles/mocha_helper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmocha_helper.a"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_helper.dir/cmake_clean_target.cmake
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_helper.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmocha_helper.a"
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && $(CMAKE_COMMAND) -P CMakeFiles/mocha_helper.dir/cmake_clean_target.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_helper.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/helper/CMakeFiles/mocha_helper.dir/build: src/helper/libmocha_helper.a
 .PHONY : src/helper/CMakeFiles/mocha_helper.dir/build
 
 src/helper/CMakeFiles/mocha_helper.dir/clean:
-	cd "/home/cmbe/GitHub/CMake Test/build/src/helper" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_helper.dir/cmake_clean.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/helper && $(CMAKE_COMMAND) -P CMakeFiles/mocha_helper.dir/cmake_clean.cmake
 .PHONY : src/helper/CMakeFiles/mocha_helper.dir/clean
 
 src/helper/CMakeFiles/mocha_helper.dir/depend:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/cmbe/GitHub/CMake Test" "/home/cmbe/GitHub/CMake Test/src/helper" "/home/cmbe/GitHub/CMake Test/build" "/home/cmbe/GitHub/CMake Test/build/src/helper" "/home/cmbe/GitHub/CMake Test/build/src/helper/CMakeFiles/mocha_helper.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cmbe/GitHub/big-mocha /home/cmbe/GitHub/big-mocha/src/helper /home/cmbe/GitHub/big-mocha/build /home/cmbe/GitHub/big-mocha/build/src/helper /home/cmbe/GitHub/big-mocha/build/src/helper/CMakeFiles/mocha_helper.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : src/helper/CMakeFiles/mocha_helper.dir/depend
 

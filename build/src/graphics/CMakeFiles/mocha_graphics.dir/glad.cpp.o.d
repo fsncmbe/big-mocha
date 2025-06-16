@@ -1,5 +1,5 @@
 src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: \
- /home/cmbe/GitHub/CMake\ Test/src/graphics/glad.cpp \
+ /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -39,8 +39,8 @@ src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/c++/15.1.1/bits/std_abs.h \
  /usr/include/string.h /usr/include/strings.h \
- /home/cmbe/GitHub/CMake\ Test/src/graphics/../../include/glad/glad.h \
- /home/cmbe/GitHub/CMake\ Test/src/graphics/../../include/KHR/khrplatform.h \
+ /home/cmbe/GitHub/big-mocha/src/graphics/../../include/glad/glad.h \
+ /home/cmbe/GitHub/big-mocha/src/graphics/../../include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \

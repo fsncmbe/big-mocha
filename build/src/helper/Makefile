@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cmbe/GitHub/CMake Test"
+CMAKE_SOURCE_DIR = /home/cmbe/GitHub/big-mocha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cmbe/GitHub/CMake Test/build"
+CMAKE_BINARY_DIR = /home/cmbe/GitHub/big-mocha/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,21 +87,21 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" "/home/cmbe/GitHub/CMake Test/build/src/helper//CMakeFiles/progress.marks"
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles /home/cmbe/GitHub/big-mocha/build/src/helper//CMakeFiles/progress.marks
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" "/home/cmbe/GitHub/CMake Test/build/src/helper//CMakeFiles/progress.marks"
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cmbe/GitHub/CMake Test/build/CMakeFiles" 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles /home/cmbe/GitHub/big-mocha/build/src/helper//CMakeFiles/progress.marks
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/codegen
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cmbe/GitHub/big-mocha/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
 clean:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/clean
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/clean
 .PHONY : clean
 
 # The main clean target
@@ -110,22 +110,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/preinstall
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/preinstall
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/helper/CMakeFiles/mocha_helper.dir/rule:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/CMakeFiles/mocha_helper.dir/rule
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/helper/CMakeFiles/mocha_helper.dir/rule
 .PHONY : src/helper/CMakeFiles/mocha_helper.dir/rule
 
 # Convenience name for target.
@@ -134,7 +134,7 @@ mocha_helper: src/helper/CMakeFiles/mocha_helper.dir/rule
 
 # fast build rule for target.
 mocha_helper/fast:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/build
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/build
 .PHONY : mocha_helper/fast
 
 log.o: log.cpp.o
@@ -142,7 +142,7 @@ log.o: log.cpp.o
 
 # target to build an object file
 log.cpp.o:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.o
 .PHONY : log.cpp.o
 
 log.i: log.cpp.i
@@ -150,7 +150,7 @@ log.i: log.cpp.i
 
 # target to preprocess a source file
 log.cpp.i:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.i
 .PHONY : log.cpp.i
 
 log.s: log.cpp.s
@@ -158,7 +158,7 @@ log.s: log.cpp.s
 
 # target to generate assembly for a file
 log.cpp.s:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/log.cpp.s
 .PHONY : log.cpp.s
 
 resource.o: resource.cpp.o
@@ -166,7 +166,7 @@ resource.o: resource.cpp.o
 
 # target to build an object file
 resource.cpp.o:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.o
 .PHONY : resource.cpp.o
 
 resource.i: resource.cpp.i
@@ -174,7 +174,7 @@ resource.i: resource.cpp.i
 
 # target to preprocess a source file
 resource.cpp.i:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.i
 .PHONY : resource.cpp.i
 
 resource.s: resource.cpp.s
@@ -182,7 +182,7 @@ resource.s: resource.cpp.s
 
 # target to generate assembly for a file
 resource.cpp.s:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build && $(MAKE) $(MAKESILENT) -f src/helper/CMakeFiles/mocha_helper.dir/build.make src/helper/CMakeFiles/mocha_helper.dir/resource.cpp.s
 .PHONY : resource.cpp.s
 
 # Help Target
@@ -212,6 +212,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

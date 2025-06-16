@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/cmbe/GitHub/CMake Test/src/helper/../../include"
+CXX_INCLUDES = -I/home/cmbe/GitHub/big-mocha/src/helper/../../include
 
 CXX_FLAGS = 
 

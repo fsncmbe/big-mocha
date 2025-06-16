@@ -1,7 +1,7 @@
 src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o: \
- /home/cmbe/GitHub/CMake\ Test/src/graphics/stb.cpp \
+ /home/cmbe/GitHub/big-mocha/src/graphics/stb.cpp \
  /usr/include/stdc-predef.h \
- /home/cmbe/GitHub/CMake\ Test/src/graphics/../../include/stb/stb_image.h \
+ /home/cmbe/GitHub/big-mocha/src/graphics/../../include/stb/stb_image.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \

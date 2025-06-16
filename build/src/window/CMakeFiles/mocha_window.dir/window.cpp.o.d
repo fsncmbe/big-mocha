@@ -1,7 +1,7 @@
 src/window/CMakeFiles/mocha_window.dir/window.cpp.o: \
- /home/cmbe/GitHub/CMake\ Test/src/window/window.cpp \
+ /home/cmbe/GitHub/big-mocha/src/window/window.cpp \
  /usr/include/stdc-predef.h \
- /home/cmbe/GitHub/CMake\ Test/src/window/../../include/mocha/window/window.hpp \
+ /home/cmbe/GitHub/big-mocha/src/window/../../include/mocha/window/window.hpp \
  /usr/include/c++/15.1.1/iostream \
  /usr/include/c++/15.1.1/bits/requires_hosted.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -147,13 +147,13 @@ src/window/CMakeFiles/mocha_window.dir/window.cpp.o: \
  /usr/include/c++/15.1.1/bits/basic_ios.tcc \
  /usr/include/c++/15.1.1/bits/ostream.tcc /usr/include/c++/15.1.1/istream \
  /usr/include/c++/15.1.1/bits/istream.tcc \
- /home/cmbe/GitHub/CMake\ Test/src/window/../../include/glad/glad.h \
- /home/cmbe/GitHub/CMake\ Test/src/window/../../include/KHR/khrplatform.h \
+ /home/cmbe/GitHub/big-mocha/src/window/../../include/glad/glad.h \
+ /home/cmbe/GitHub/big-mocha/src/window/../../include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /home/cmbe/GitHub/CMake\ Test/src/window/../../include/GLFW/glfw3.h \
- /home/cmbe/GitHub/CMake\ Test/src/window/../../include/mocha/helper/log.hpp \
+ /home/cmbe/GitHub/big-mocha/src/window/../../include/GLFW/glfw3.h \
+ /home/cmbe/GitHub/big-mocha/src/window/../../include/mocha/helper/log.hpp \
  /usr/include/c++/15.1.1/ctime /usr/include/c++/15.1.1/fstream \
  /usr/include/c++/15.1.1/bits/codecvt.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \

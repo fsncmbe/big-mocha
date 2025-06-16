@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cmbe/GitHub/CMake Test"
+CMAKE_SOURCE_DIR = /home/cmbe/GitHub/big-mocha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cmbe/GitHub/CMake Test/build"
+CMAKE_BINARY_DIR = /home/cmbe/GitHub/big-mocha/build
 
 # Include any dependencies generated for this target.
 include src/graphics/CMakeFiles/mocha_graphics.dir/depend.make
@@ -73,74 +73,74 @@ src/graphics/CMakeFiles/mocha_graphics.dir/codegen:
 .PHONY : src/graphics/CMakeFiles/mocha_graphics.dir/codegen
 
 src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/flags.make
-src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/glad.cpp
+src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp
 src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o -MF CMakeFiles/mocha_graphics.dir/glad.cpp.o.d -o CMakeFiles/mocha_graphics.dir/glad.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.o -MF CMakeFiles/mocha_graphics.dir/glad.cpp.o.d -o CMakeFiles/mocha_graphics.dir/glad.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp
 
 src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_graphics.dir/glad.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp" > CMakeFiles/mocha_graphics.dir/glad.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp > CMakeFiles/mocha_graphics.dir/glad.cpp.i
 
 src/graphics/CMakeFiles/mocha_graphics.dir/glad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_graphics.dir/glad.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp" -o CMakeFiles/mocha_graphics.dir/glad.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp -o CMakeFiles/mocha_graphics.dir/glad.cpp.s
 
 src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/flags.make
-src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/stb.cpp
+src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/stb.cpp
 src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o -MF CMakeFiles/mocha_graphics.dir/stb.cpp.o.d -o CMakeFiles/mocha_graphics.dir/stb.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/stb.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.o -MF CMakeFiles/mocha_graphics.dir/stb.cpp.o.d -o CMakeFiles/mocha_graphics.dir/stb.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/stb.cpp
 
 src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_graphics.dir/stb.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/stb.cpp" > CMakeFiles/mocha_graphics.dir/stb.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/stb.cpp > CMakeFiles/mocha_graphics.dir/stb.cpp.i
 
 src/graphics/CMakeFiles/mocha_graphics.dir/stb.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_graphics.dir/stb.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/stb.cpp" -o CMakeFiles/mocha_graphics.dir/stb.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/stb.cpp -o CMakeFiles/mocha_graphics.dir/stb.cpp.s
 
 src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/flags.make
-src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/render.cpp
+src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/render.cpp
 src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o -MF CMakeFiles/mocha_graphics.dir/render.cpp.o.d -o CMakeFiles/mocha_graphics.dir/render.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/render.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.o -MF CMakeFiles/mocha_graphics.dir/render.cpp.o.d -o CMakeFiles/mocha_graphics.dir/render.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/render.cpp
 
 src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_graphics.dir/render.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/render.cpp" > CMakeFiles/mocha_graphics.dir/render.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/render.cpp > CMakeFiles/mocha_graphics.dir/render.cpp.i
 
 src/graphics/CMakeFiles/mocha_graphics.dir/render.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_graphics.dir/render.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/render.cpp" -o CMakeFiles/mocha_graphics.dir/render.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/render.cpp -o CMakeFiles/mocha_graphics.dir/render.cpp.s
 
 src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/flags.make
-src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/camera.cpp
+src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/camera.cpp
 src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o -MF CMakeFiles/mocha_graphics.dir/camera.cpp.o.d -o CMakeFiles/mocha_graphics.dir/camera.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/camera.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.o -MF CMakeFiles/mocha_graphics.dir/camera.cpp.o.d -o CMakeFiles/mocha_graphics.dir/camera.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/camera.cpp
 
 src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_graphics.dir/camera.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/camera.cpp" > CMakeFiles/mocha_graphics.dir/camera.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/camera.cpp > CMakeFiles/mocha_graphics.dir/camera.cpp.i
 
 src/graphics/CMakeFiles/mocha_graphics.dir/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_graphics.dir/camera.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/camera.cpp" -o CMakeFiles/mocha_graphics.dir/camera.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/camera.cpp -o CMakeFiles/mocha_graphics.dir/camera.cpp.s
 
 src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/flags.make
-src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o: /home/cmbe/GitHub/CMake\ Test/src/graphics/drawables.cpp
+src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o: /home/cmbe/GitHub/big-mocha/src/graphics/drawables.cpp
 src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o: src/graphics/CMakeFiles/mocha_graphics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o -MF CMakeFiles/mocha_graphics.dir/drawables.cpp.o.d -o CMakeFiles/mocha_graphics.dir/drawables.cpp.o -c "/home/cmbe/GitHub/CMake Test/src/graphics/drawables.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o -MF CMakeFiles/mocha_graphics.dir/drawables.cpp.o.d -o CMakeFiles/mocha_graphics.dir/drawables.cpp.o -c /home/cmbe/GitHub/big-mocha/src/graphics/drawables.cpp
 
 src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mocha_graphics.dir/drawables.cpp.i"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cmbe/GitHub/CMake Test/src/graphics/drawables.cpp" > CMakeFiles/mocha_graphics.dir/drawables.cpp.i
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cmbe/GitHub/big-mocha/src/graphics/drawables.cpp > CMakeFiles/mocha_graphics.dir/drawables.cpp.i
 
 src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mocha_graphics.dir/drawables.cpp.s"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cmbe/GitHub/CMake Test/src/graphics/drawables.cpp" -o CMakeFiles/mocha_graphics.dir/drawables.cpp.s
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cmbe/GitHub/big-mocha/src/graphics/drawables.cpp -o CMakeFiles/mocha_graphics.dir/drawables.cpp.s
 
 # Object files for target mocha_graphics
 mocha_graphics_OBJECTS = \
@@ -160,19 +160,19 @@ src/graphics/libmocha_graphics.a: src/graphics/CMakeFiles/mocha_graphics.dir/cam
 src/graphics/libmocha_graphics.a: src/graphics/CMakeFiles/mocha_graphics.dir/drawables.cpp.o
 src/graphics/libmocha_graphics.a: src/graphics/CMakeFiles/mocha_graphics.dir/build.make
 src/graphics/libmocha_graphics.a: src/graphics/CMakeFiles/mocha_graphics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cmbe/GitHub/CMake Test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libmocha_graphics.a"
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_graphics.dir/cmake_clean_target.cmake
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_graphics.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cmbe/GitHub/big-mocha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libmocha_graphics.a"
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && $(CMAKE_COMMAND) -P CMakeFiles/mocha_graphics.dir/cmake_clean_target.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mocha_graphics.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/graphics/CMakeFiles/mocha_graphics.dir/build: src/graphics/libmocha_graphics.a
 .PHONY : src/graphics/CMakeFiles/mocha_graphics.dir/build
 
 src/graphics/CMakeFiles/mocha_graphics.dir/clean:
-	cd "/home/cmbe/GitHub/CMake Test/build/src/graphics" && $(CMAKE_COMMAND) -P CMakeFiles/mocha_graphics.dir/cmake_clean.cmake
+	cd /home/cmbe/GitHub/big-mocha/build/src/graphics && $(CMAKE_COMMAND) -P CMakeFiles/mocha_graphics.dir/cmake_clean.cmake
 .PHONY : src/graphics/CMakeFiles/mocha_graphics.dir/clean
 
 src/graphics/CMakeFiles/mocha_graphics.dir/depend:
-	cd "/home/cmbe/GitHub/CMake Test/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/cmbe/GitHub/CMake Test" "/home/cmbe/GitHub/CMake Test/src/graphics" "/home/cmbe/GitHub/CMake Test/build" "/home/cmbe/GitHub/CMake Test/build/src/graphics" "/home/cmbe/GitHub/CMake Test/build/src/graphics/CMakeFiles/mocha_graphics.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /home/cmbe/GitHub/big-mocha/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cmbe/GitHub/big-mocha /home/cmbe/GitHub/big-mocha/src/graphics /home/cmbe/GitHub/big-mocha/build /home/cmbe/GitHub/big-mocha/build/src/graphics /home/cmbe/GitHub/big-mocha/build/src/graphics/CMakeFiles/mocha_graphics.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : src/graphics/CMakeFiles/mocha_graphics.dir/depend
 

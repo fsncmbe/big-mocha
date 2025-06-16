@@ -1,4 +1,4 @@
-# Install script for directory: /home/cmbe/GitHub/CMake Test
+# Install script for directory: /home/cmbe/GitHub/big-mocha
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,28 +44,28 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cmbe/GitHub/CMake Test/build/src/helper/cmake_install.cmake")
+  include("/home/cmbe/GitHub/big-mocha/build/src/helper/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cmbe/GitHub/CMake Test/build/src/graphics/cmake_install.cmake")
+  include("/home/cmbe/GitHub/big-mocha/build/src/graphics/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cmbe/GitHub/CMake Test/build/src/window/cmake_install.cmake")
+  include("/home/cmbe/GitHub/big-mocha/build/src/window/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cmbe/GitHub/CMake Test/build/src/cmake_install.cmake")
+  include("/home/cmbe/GitHub/big-mocha/build/src/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/cmbe/GitHub/CMake Test/build/install_local_manifest.txt"
+  file(WRITE "/home/cmbe/GitHub/big-mocha/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -81,6 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/cmbe/GitHub/CMake Test/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/cmbe/GitHub/big-mocha/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

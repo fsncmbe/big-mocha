@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cmbe/GitHub/CMake Test/src/graphics/glad.cpp" "src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o" "gcc" "src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o.d"
-  "/home/cmbe/GitHub/CMake Test/src/window/window.cpp" "src/window/CMakeFiles/mocha_window.dir/window.cpp.o" "gcc" "src/window/CMakeFiles/mocha_window.dir/window.cpp.o.d"
+  "/home/cmbe/GitHub/big-mocha/src/graphics/glad.cpp" "src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o" "gcc" "src/window/CMakeFiles/mocha_window.dir/__/graphics/glad.cpp.o.d"
+  "/home/cmbe/GitHub/big-mocha/src/window/window.cpp" "src/window/CMakeFiles/mocha_window.dir/window.cpp.o" "gcc" "src/window/CMakeFiles/mocha_window.dir/window.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
