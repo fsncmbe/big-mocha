@@ -11,6 +11,7 @@ int main()
 {
   window::init();
 
+  // Log settings
   addLogLevel(LogLevel::DEBUG);
   log(LogLevel::DEBUG, "Init done");
 
@@ -32,6 +33,7 @@ int main()
   // Bind window dt to this scope dt for ease of use
   float* dt = window::getDT();
 
+  // Main game loop
   while (window::gameLoop())
   {
     graphics::draw(cube ,{200, 200}, {130, 150}, 0.0f, {1.0f, 1.0f, 1.0f});
