@@ -1,4 +1,5 @@
 #include <mocha/graphics/render.hpp>
+#include "render.hpp"
 
 namespace {
 
@@ -20,18 +21,15 @@ void setShader(Shader* shader)
 
 void updateShaders(float dt)
 {
-  /*
   if (inst.current_shader == nullptr)
   {
     mocha::log(mocha::LogLevel::ERROR, "NO SHADER LOADED");
     glfwTerminate();
   }
-  */
-  /**
+
   inst.current_shader->setMat4("projection", inst.camera->getProjectionMatrix());
   inst.current_shader->setMat4("view", inst.camera->getViewMatrix());
   inst.current_shader->setVec3("view_pos", inst.camera->getPosition());
-  */
 }
 
 void genCubeData()
@@ -86,5 +84,16 @@ void draw(Texture &tex, glm::vec2 pos, glm::vec2 size, float rotate, glm::vec3 c
   glBindVertexArray(0);
 }
 
+void draw(Model &model_, glm::vec3 pos, glm::vec3 color)
+{
+  inst.current_shader->use();
+  glm::mat4 model(1.0f);
+  model = glm::translate(model, pos);
+  
+  inst.current_shader->setMat4("projection", inst.camera->getProjectionMatrix());
+  inst.current_shader->setMat4("view", inst.camera->getViewMatrix());
 
+  glBindVertexArray(model_
+
+}
 }

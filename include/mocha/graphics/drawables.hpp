@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstring>
 
 #include <glad/glad.h>
 #include <glm/glm.hpp>
@@ -36,14 +37,6 @@ class Shader : public mocha::resource::IResource
   unsigned int id_;
 };
 
-class DummyShader : public Shader
-{
- public:
-  DummyShader() {};
-  const char* load (const std::string& path) override {return "null";};
-  
-};
-
 class Texture : public mocha::resource::IResource
 {
  public:
@@ -62,6 +55,20 @@ class Texture : public mocha::resource::IResource
 
  private:
   unsigned int id_;
+};
+
+class Model : public mocha::resource::IResource
+{
+ public:
+  const char* load (const std::string& path);
+
+
+
+ private:
+  bool loadModel();
+  std::vector<glm::vec3> vertices_;
+  std::vector<glm::vec2> uvs_;
+  std::vector<glm::vec3> normals_;
 };
 
 }

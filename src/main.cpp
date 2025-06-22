@@ -36,6 +36,7 @@ int main()
   // Main game loop
   while (window::gameLoop())
   {
+    
     graphics::draw(cube ,{200, 200}, {130, 150}, 0.0f, {1.0f, 1.0f, 1.0f});
   }
 

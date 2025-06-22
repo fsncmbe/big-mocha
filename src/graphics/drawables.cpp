@@ -154,4 +154,100 @@ void Texture::use()
   glBindTexture(GL_TEXTURE_2D, id_);
 }
 
+const char* Model::load (const std::string& path)
+{
+  std::vector<unsigned int> vertex_indices, uv_indices, normal_indices;
+
+  std::vector<glm::vec3> vertices;
+  std::vector<glm::vec2> uvs;
+  std::vector<glm::vec3> normals;
+
+  FILE* file = fopen(path.c_str(), "r");
+  if (file == NULL)
+  {
+    return "File not openable, maybe non existent!";
+  }
+
+  while (true)
+  {
+    char line_head[128];
+    int res = fscanf(file, "%s", line_head);
+    if (res == EOF)
+      break;
+    if (strcmp(line_head, "v") == 0)
+    {
+      glm::vec3 vertex;
+      fscanf(file, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z );
+      vertices.push_back(vertex);
+    } 
+    else if (strcmp(line_head, "vt") == 0)
+    {
+      glm::vec2 uv;
+      fscanf(file, "%f %f\n", &uv.x, &uv.y );
+      uvs.push_back(uv);
+    }
+    else if (strcmp(line_head, "vn") == 0 )
+    {
+      glm::vec3 normal;
+      fscanf(file, "%f %f %f\n", &normal.x, &normal.y, &normal.z );
+      normals.push_back(normal);
+    }
+    else if (strcmp(line_head, "f") == 0)
+    {
+      std::string vertex1, vertex2, vertex3;
+      unsigned int vertexIndex[3], uvIndex[3], normalIndex[3];
+      int matches = fscanf(file, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vertexIndex[0], &uvIndex[0], &normalIndex[0], &vertexIndex[1], &uvIndex[1], &normalIndex[1], &vertexIndex[2], &uvIndex[2], &normalIndex[2] );
+      if (matches != 9){
+          return "Failure while parsing";
+      }
+      vertex_indices.push_back(vertexIndex[0]);
+      vertex_indices.push_back(vertexIndex[1]);
+      vertex_indices.push_back(vertexIndex[2]);
+      uv_indices    .push_back(uvIndex[0]);
+      uv_indices    .push_back(uvIndex[1]);
+      uv_indices    .push_back(uvIndex[2]);
+      normal_indices.push_back(normalIndex[0]);
+      normal_indices.push_back(normalIndex[1]);
+      normal_indices.push_back(normalIndex[2]);
+    }
+
+    for (int i=0; i<vertex_indices.size(); i++)
+    {
+      unsigned int vertex_index = vertex_indices[i];
+      glm::vec3 vertex = vertices[vertex_index-1];
+      vertices_.push_back(vertex);
+    }
+
+    for (int i=0; i<uv_indices.size(); i++)
+    {
+      unsigned int uv_index = uv_indices[i];
+      glm::vec2 uv = uvs[uv_index-1];
+      uvs_.push_back(uv);
+    }
+
+    for (int i=0; i<normal_indices.size(); i++)
+    {
+      unsigned int normal_index = normal_indices[i];
+      glm::vec3 normal = normals[normal_index-1];
+      normals_.push_back(normal);
+    }
+
+    return "SUCCESS";
+  }
+}
+
+bool Model::loadModel()
+{
+  GLuint vertex_buf;
+  glGenBuffers(1, &vertex_buf);
+  glBindBuffer(GL_ARRAY_BUFFER, vertex_buf);
+  glBufferData(GL_ARRAY_BUFFER, vertices_.size() * sizeof(glm::vec3), &vertices_[0], GL_STATIC_DRAW);
+
+  GLuint uv_buf;
+  glGenBuffers(1, &uv_buf);
+  glBindBuffer(GL_ARRAY_BUFFER, uv_buf);
+  glBufferData(GL_ARRAY_BUFFER, uvs_.size() * sizeof(glm::vec2), &uvs_[0], GL_STATIC_DRAW);
+  
+}
+
 }

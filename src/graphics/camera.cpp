@@ -27,15 +27,8 @@ glm::mat4 Camera::getProjectionMatrix()
   return projection_;
 }
 
-glm::vec3 Camera::getPosition()
-{
-  return glm::vec3();
-}
-
 void Camera::update(float dt)
 {
-  //mouseMovement(dt);
-  //keyMovement(dt);
   updateCameraVectors();
 }
 
@@ -49,6 +42,10 @@ void Camera::updateCameraVectors()
 
   right_ = glm::normalize(glm::cross(front_, world_up_));
   up_ = glm::normalize(glm::cross(right_, front_));
+
+  const float zoom = 45.0f;
+
+  projection_ = glm::perspective(glm::radians(zoom), 1920.0f/1080.0f, 0.1f, 100.0f);
 }
 
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <glad/glad.h>
+#include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
 
@@ -17,5 +18,6 @@ void updateShaders(float dt);
 
 void genCubeData();
 void draw(Texture &tex, glm::vec2 pos, glm::vec2 size, float rotate, glm::vec3 color);
+void draw(Model &model_, glm::vec3 pos, glm::vec3 color);
 }
 #endif
