@@ -1,22 +1,113 @@
 #include <mocha/window/window.hpp>
 
+namespace mocha::input {
+
 namespace {
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+  if (key == GLFW_KEY_UNKNOWN) return;
+  using KeyState = mocha::input::KeyState;
+  mocha::input::KeyState& state = mocha::input::inst.key_states[key];
 
-struct {
-  GLFWwindow* glfw_window_;
-  float dt_;
-  float last_frame_;
-  float current_frame_;
-} inst;
+  if (action == GLFW_PRESS)
+  {
+    if (state == KeyState::None || state == KeyState::Released)
+    {
+      state = KeyState::Pressed;
+    }
+  }
+  else if (action == GLFW_RELEASE)
+  {
+    state = KeyState::Released;
+  }
+}
 
+void mouseKeyCallback(GLFWwindow* window, int key, int action, int mods)
+{
+  if (key == GLFW_KEY_UNKNOWN) return;
+
+  using KeyState = mocha::input::KeyState;
+  mocha::input::KeyState& state = mocha::input::inst.mouse_states[key];
+
+  if (action == GLFW_PRESS)
+  {
+    if (state == KeyState::None || state == KeyState::Released)
+    {
+      state = KeyState::Pressed;
+    }
+  }
+  else if (action == GLFW_RELEASE)
+  {
+    state = KeyState::Released;
+  }
+}
+
+void mousePosCallback(GLFWwindow* window, double xpos, double ypos)
+{
+  mocha::input::inst.mouse_pos = glm::vec2(xpos, ypos);
+}
+
+void changeKeyState()
+{
+  using KeyState = mocha::input::KeyState;
+
+  for (auto& pair : inst.key_states)
+  {
+    KeyState& state = pair.second;
+    
+    if (state == KeyState::Pressed)
+    {
+      state == KeyState::Held;
+    }
+    else if (state == KeyState::Released)
+    {
+      state == KeyState::None;
+    }
+  }
+
+  for (auto& pair : mocha::input::inst.mouse_states)
+  {
+    KeyState& state = pair.second;
+    
+    if (state == KeyState::Pressed)
+    {
+      state == KeyState::Held;
+    }
+    else if (state == KeyState::Released)
+    {
+      state == KeyState::None;
+    }
+  }
+}
+}
+
+KeyState getKeyState(int key)
+{
+  return mocha::input::inst.key_states[key];
+}
+
+KeyState getMouseKeyState(int key)
+{
+  return mocha::input::inst.mouse_states[key];
+}
+
+glm::vec2 getMousePos()
+{
+  return mocha::input::inst.mouse_pos;
+}
+}
+
+
+
+
+namespace mocha::window {
+
+namespace {
 void windowSizeChange(GLFWwindow *window, int width, int height)
 {
   glViewport(0, 0, width, height);
 }
-
 }
-
-namespace mocha::window {
 
 void init()
 {
@@ -31,51 +122,59 @@ void init()
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   // Hard coded window size, change after initial launch
-  inst.glfw_window_ = glfwCreateWindow(1920, 1080, "Engine", NULL, NULL);
+  mocha::window::inst.glfw_window_ = glfwCreateWindow(1920, 1080, "Engine", NULL, NULL);
 
-  if (!inst.glfw_window_)
+  if (!mocha::window::inst.glfw_window_)
   {
     mocha::log(mocha::LogLevel::ERROR, "GLFW WINDOW FAILED");
     glfwTerminate();
   }
 
-  glfwMakeContextCurrent(inst.glfw_window_);
-  glfwSetFramebufferSizeCallback(inst.glfw_window_, windowSizeChange);
+  glfwMakeContextCurrent(mocha::window::inst.glfw_window_);
+  glfwSetFramebufferSizeCallback(mocha::window::inst.glfw_window_, windowSizeChange);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
   {
     mocha::log(mocha::LogLevel::ERROR, "GLAD FAILED");
   }
 
-  glfwSetInputMode(inst.glfw_window_, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+  glfwSetInputMode(mocha::window::inst.glfw_window_, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   glEnable(GL_DEPTH_TEST);
 
-  inst.current_frame_, inst.last_frame_ = glfwGetTime();
-  inst.dt_ = 0;
+  // Input callbacks
+  glfwSetKeyCallback(mocha::window::inst.glfw_window_, mocha::input::keyCallback);
+  glfwSetMouseButtonCallback(mocha::window::inst.glfw_window_, mocha::input::mouseKeyCallback);
+  glfwSetCursorPosCallback(mocha::window::inst.glfw_window_, mocha::input::mousePosCallback);
+
+  mocha::window::inst.current_frame_, mocha::window::inst.last_frame_ = glfwGetTime();
+  mocha::window::inst.dt_ = 0;
 };
 
 bool gameLoop()
 {
   // END OF LAST FRAME
-  glfwSwapBuffers(inst.glfw_window_);
+  glfwSwapBuffers(mocha::window::inst.glfw_window_);
   glfwPollEvents();
 
   // BETWEEN FRAMES
-  inst.current_frame_ = glfwGetTime();
-  inst.dt_ = inst.current_frame_ - inst.last_frame_;
-  inst.last_frame_ = inst.current_frame_;
+  mocha::window::inst.current_frame_ = glfwGetTime();
+  mocha::window::inst.dt_ = mocha::window::inst.current_frame_ - mocha::window::inst.last_frame_;
+  mocha::window::inst.last_frame_ = mocha::window::inst.current_frame_;
+
+  // INPUT STATE CHANGE
+  mocha::input::changeKeyState();
 
   // BEGINNING OF NEXT FRAME
   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  return !glfwWindowShouldClose(inst.glfw_window_);
+  return !glfwWindowShouldClose(mocha::window::inst.glfw_window_);
 }
 
 float* getDT()
 {
-  return &inst.dt_;
+  return &mocha::window::inst.dt_;
 }
 
 }

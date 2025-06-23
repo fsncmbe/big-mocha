@@ -159,6 +159,7 @@ const char* Model::load (const std::string& path)
   std::vector<unsigned int> vertex_indices, uv_indices, normal_indices;
 
   std::vector<glm::vec3> vertices;
+  std::vector<glm::vec3> vertices_;
   std::vector<glm::vec2> uvs;
   std::vector<glm::vec3> normals;
 
@@ -210,44 +211,56 @@ const char* Model::load (const std::string& path)
       normal_indices.push_back(normalIndex[1]);
       normal_indices.push_back(normalIndex[2]);
     }
+  }
 
-    for (int i=0; i<vertex_indices.size(); i++)
-    {
-      unsigned int vertex_index = vertex_indices[i];
-      glm::vec3 vertex = vertices[vertex_index-1];
-      vertices_.push_back(vertex);
-    }
+  for (int i=0; i<vertex_indices.size(); i++)
+  {
+    unsigned int vertex_index = vertex_indices[i];
+    glm::vec3 vertex = vertices[vertex_index-1];
+    vertices_.push_back(vertex);
+  }
 
-    for (int i=0; i<uv_indices.size(); i++)
-    {
-      unsigned int uv_index = uv_indices[i];
-      glm::vec2 uv = uvs[uv_index-1];
-      uvs_.push_back(uv);
-    }
+  /**
+  for (int i=0; i<uv_indices.size(); i++)
+  {
+    unsigned int uv_index = uv_indices[i];
+    glm::vec2 uv = uvs[uv_index-1];
+    uvs_.push_back(uv);
+  }
 
-    for (int i=0; i<normal_indices.size(); i++)
-    {
-      unsigned int normal_index = normal_indices[i];
-      glm::vec3 normal = normals[normal_index-1];
-      normals_.push_back(normal);
-    }
+  for (int i=0; i<normal_indices.size(); i++)
+  {
+    unsigned int normal_index = normal_indices[i];
+    glm::vec3 normal = normals[normal_index-1];
+    normals_.push_back(normal);
+  }
+  */
 
+  vertices_size = vertices_.size();
+
+  if (loadModel(vertices_))
+  {
     return "SUCCESS";
   }
+  return "MODEL LOADING";
 }
 
-bool Model::loadModel()
-{
-  GLuint vertex_buf;
-  glGenBuffers(1, &vertex_buf);
-  glBindBuffer(GL_ARRAY_BUFFER, vertex_buf);
-  glBufferData(GL_ARRAY_BUFFER, vertices_.size() * sizeof(glm::vec3), &vertices_[0], GL_STATIC_DRAW);
+bool Model::loadModel(std::vector<glm::vec3> &vertices)
+{ 
+  GLuint VBO;
 
-  GLuint uv_buf;
-  glGenBuffers(1, &uv_buf);
-  glBindBuffer(GL_ARRAY_BUFFER, uv_buf);
-  glBufferData(GL_ARRAY_BUFFER, uvs_.size() * sizeof(glm::vec2), &uvs_[0], GL_STATIC_DRAW);
-  
+  glGenVertexArrays(1, &VAO);
+  glGenBuffers(1, &VBO);
+
+  glBindVertexArray(VAO);
+  glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+  glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), &vertices[0], GL_STATIC_DRAW);
+  glEnableVertexAttribArray(0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+  glBindVertexArray(0);
+  return true;
 }
 
 }

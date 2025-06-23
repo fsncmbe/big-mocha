@@ -61,14 +61,11 @@ class Model : public mocha::resource::IResource
 {
  public:
   const char* load (const std::string& path);
-
-
+  unsigned int VAO;
+  unsigned int vertices_size;
 
  private:
-  bool loadModel();
-  std::vector<glm::vec3> vertices_;
-  std::vector<glm::vec2> uvs_;
-  std::vector<glm::vec3> normals_;
+  bool loadModel(std::vector<glm::vec3> &vertices);
 };
 
 }

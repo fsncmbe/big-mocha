@@ -29,7 +29,47 @@ glm::mat4 Camera::getProjectionMatrix()
 
 void Camera::update(float dt)
 {
+  move(dt);
   updateCameraVectors();
+}
+
+void Camera::move(float dt)
+{
+  float velocity = movement_speed_ * dt;
+  if (mocha::input::getKeyState(GLFW_KEY_W) == mocha::input::KeyState::Pressed ||
+      mocha::input::getKeyState(GLFW_KEY_W) == mocha::input::KeyState::Held)
+  {
+    position_ += front_ * velocity;
+  }
+
+  if (mocha::input::getKeyState(GLFW_KEY_S) == mocha::input::KeyState::Pressed ||
+      mocha::input::getKeyState(GLFW_KEY_S) == mocha::input::KeyState::Held)
+  {
+    position_ -= front_ * velocity;
+  }
+
+  if (mocha::input::getKeyState(GLFW_KEY_A) == mocha::input::KeyState::Pressed ||
+      mocha::input::getKeyState(GLFW_KEY_A) == mocha::input::KeyState::Held)
+  {
+    position_ -= right_ * velocity;
+  }
+
+  if (mocha::input::getKeyState(GLFW_KEY_D) == mocha::input::KeyState::Pressed ||
+      mocha::input::getKeyState(GLFW_KEY_D) == mocha::input::KeyState::Held)
+  {
+    position_ += right_ * velocity;
+  }
+
+  glm::vec2 new_mouse_pos = mocha::input::getMousePos();
+
+  glm::vec2 mouse_offset = {new_mouse_pos.x - mouse_pos_.x, mouse_pos_.y - new_mouse_pos.y};
+
+  mouse_offset *= mouse_sensitivity_;
+
+  mouse_pos_ = new_mouse_pos;
+
+  yaw_ += mouse_offset.x;
+  pitch_ += mouse_offset.y;
 }
 
 void Camera::updateCameraVectors()

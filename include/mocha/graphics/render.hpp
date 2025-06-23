@@ -16,8 +16,11 @@ namespace mocha::graphics {
 void setShader(Shader* shader);
 void updateShaders(float dt);
 
-void genCubeData();
-void draw(Texture &tex, glm::vec2 pos, glm::vec2 size, float rotate, glm::vec3 color);
+void setCamera(Camera* camera);
+Camera* getCamera();
+
+void update(float dt);
+
 void draw(Model &model_, glm::vec3 pos, glm::vec3 color);
 }
 #endif

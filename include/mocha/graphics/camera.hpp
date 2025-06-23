@@ -5,6 +5,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <mocha/window/window.hpp>
+
 namespace mocha::graphics {
 
 class Camera
@@ -18,6 +20,7 @@ class Camera
 
  private:
   void        updateCameraVectors();
+  void        move(float dt);
 
   glm::mat4   projection_;
   glm::vec3   position_;
