@@ -4,6 +4,7 @@
 #include <mocha/helper/resource.hpp>
 #include <mocha/graphics/render.hpp>
 #include <mocha/window/window.hpp>
+#include <mocha/ecs/entity.hpp>
 
 using namespace mocha;
 
@@ -28,6 +29,9 @@ int main()
 
   // Load Model
   graphics::Model* m = resource::get<graphics::Model>(0);
+
+  int e = ecs::createEntity();
+  ecs::addComponent<ecs::Position>(e, 0.0f, 0.0f, 0.0f);
 
   // Bind window dt to this scope dt for ease of use
   float* dt = window::getDT();

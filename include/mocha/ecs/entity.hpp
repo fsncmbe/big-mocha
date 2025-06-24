@@ -3,57 +3,48 @@
 
 #include <iostream>
 #include <typeindex>
-#include <map>
+#include <unordered_map>
 #include <vector>
+#include <bitset>
 
 namespace mocha::ecs{
 
-// Component class that holds things for an entity like model, position,...
-class IComponent
+enum class ComponentTypes 
 {
- public:
-  virtual void create() = 0;
- private:
+  kPosition,
+  kModel,
+  kSize
 };
 
-class ISystem
+class Component
 {
- public:
-  virtual void update(float dt) = 0;
 };
 
-class Entity
-{
- public:
-  int id;
-  std::vector<IComponent*> components;
- private:
+struct Position {
+  float x, y, z;
 };
 
 namespace {
 struct {
-  std::vector<mocha::ecs::ISystem*> systems;
-  std::vector<Entity*> entities;
-} inst;
+  // Holds all entities and their bitmask, their id is equal to position in vector
+  std::vector<std::bitset<static_cast<int>(ComponentTypes::kSize)>> entities;
+
+  // Holds all components for every entity categorized by the component type
+  std::unordered_map<std::type_index, std::unordered_map<int, Component*>> components;
+} world;
 }
 
-void update(float dt)
+int createEntity()
 {
-  for (auto& sys : inst.systems)
-  {
-    sys->update(dt);
-  }
-};
-
-Entity* addEntity()
-{
-  inst.entities.push_back(new Entity());
-  return inst.entities.back();
+  world.entities.push_back(0);
 }
 
-void addComponent(Entity* entity, IComponent* component)
+template<typename T, typename... Args>
+void addComponent(int entity, Args&&... args)
 {
-  entity->components.push_back(component);
+  auto type_id = std::type_index(typeid(T));
+
+  world.components[type_id][entity] = T(std::forward<Args>(args)...);
 }
 
 }
