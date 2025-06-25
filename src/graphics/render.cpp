@@ -60,4 +60,12 @@ void update(float dt)
   inst.camera->update(dt);
 }
 
+void GraphicSys::update(float dt)
+{
+  for (int entity : mocha::ecs::view(1))
+  {
+    
+  }
+}
+
 }

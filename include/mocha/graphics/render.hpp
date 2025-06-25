@@ -10,6 +10,7 @@
 
 #include <mocha/graphics/camera.hpp>
 #include <mocha/graphics/drawables.hpp>
+#include <mocha/ecs/ecs.hpp>
 
 namespace mocha::graphics {
 
@@ -22,5 +23,14 @@ Camera* getCamera();
 void update(float dt);
 
 void draw(Model &model_, glm::vec3 pos, glm::vec3 color);
+
+class GraphicSys : public mocha::ecs::System
+{
+ public:
+  void update(float dt);
+  void notifyComponents();
+};
 }
+
+
 #endif
