@@ -43,12 +43,10 @@ int main()
   while (window::gameLoop())
   {
     
-
     // Update Graphics and start draw calls
     mocha::graphics::update(*dt);
     graphics::draw(*m, {2, 0, -20}, {1, 1, 1});
   }
-
 
   resource::clearAll();
   log(LogLevel::DEBUG, "Engine Shutdown");
