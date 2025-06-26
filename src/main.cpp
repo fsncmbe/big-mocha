@@ -30,8 +30,11 @@ int main()
   // Load Model
   graphics::Model* m = resource::get<graphics::Model>(0);
 
-  int e = ecs::createEntity();
-  ecs::addComponent<ecs::Position>(e);
+  for (int i=0; i<10; i++)
+  {
+    int s = ecs::createEntity();
+    ecs::addComponent<ecs::Position>(s);
+  }
 
   // Bind window dt to this scope dt for ease of use
   float* dt = window::getDT();
@@ -39,7 +42,6 @@ int main()
   // Main game loop
   while (window::gameLoop())
   {
-    // Game Logic
     
 
     // Update Graphics and start draw calls
